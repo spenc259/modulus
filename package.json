@@ -1,0 +1,22 @@
+{
+  "name": "intimation-pro",
+  "version": "1.0.0",
+  "description": "A modular base theme, that includes support for ACF, Bootstrap v4 and SASS integration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Spence",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "grunt": "^1.0.2",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^2.1.0",
+    "grunt-webpack": "^3.1.1"
+  }
+}

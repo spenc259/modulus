@@ -1,0 +1,26 @@
+#website {
+	display: none;
+}
+
+#myform {
+	.error-wrap {
+		background: #ed5b56;
+		padding: 1rem 1rem 1rem;
+		margin-bottom: 1rem;
+		color: white;
+		border-radius: 5px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	input,
+	textarea {
+		margin-bottom: 1rem;
+		border-radius: 5px;
+		border: 1px solid;
+		padding: 0.5rem;
+		width: 100%;
+	}
+}
