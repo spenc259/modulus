@@ -3,9 +3,19 @@
 */
 
 footer {
-	background: rgb(209, 118, 209);
+	// background: rgb(22, 6, 22);
+
+	padding: $padding;
 
 	.contact {
 		color: $white;
+	}
+}
+
+#site-footer {
+	background: $secondary;
+	a {
+		padding: 0 1rem;
+		color: white;
 	}
 }

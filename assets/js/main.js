@@ -24,36 +24,15 @@ try {
 					$(this).children('.sub-menu').toggleClass('open');
 				});
 
-				var myModal = new Modal(
-					{
-						// content: document.getElementById('search')
-					}
-				);
+				// find elements
+				var bucket_title = $('h3');
+				var bucket_info = $('ul');
 
-				$('.search-menu-item').on('click', function() {
-					myModal.open();
-					console.log(myModal.modal);
-				});
-
-				$('.search').on('click', function() {
-					myModal.search();
-				});
-
-				$('.owl-carousel').owlCarousel({
-					loop: true,
-					items: 1,
-					margin: 10,
-					nav: true,
-					responsive: {
-						0: {
-							items: 1
-						},
-						600: {
-							items: 1
-						},
-						1000: {
-							items: 1
-						}
+				// handle click and add class
+				bucket_title.on('click', function() {
+					var open = $(this).next(bucket_info).toggleClass('active').removeClass('unactive');
+					if (!open.hasClass('active')) {
+						open.toggleClass('unactive');
 					}
 				});
 			});
@@ -156,6 +135,6 @@ function update() {
 
 console.log('main');
 // window.addEventListener('scroll', onScroll, false);
-window.addEventListener('scroll', onScroll, supportsPassive ? { passive: true } : false);
+// window.addEventListener('scroll', onScroll, supportsPassive ? { passive: true } : false);
 
 // Use our detect's results. passive applied if supported, capture will be false either way.

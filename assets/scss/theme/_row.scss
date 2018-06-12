@@ -1,0 +1,28 @@
+.cta {
+	background: white;
+
+	h4 {
+		color: $secondary;
+		text-transform: initial;
+		font-style: italic;
+	}
+
+	p {
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	button {
+		background: #29235c;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			left: -50px;
+			background: url('/ping/core/buy_now_icon.png');
+			height: 44px;
+			width: 44px;
+			top: -12px;
+		}
+	}
+}

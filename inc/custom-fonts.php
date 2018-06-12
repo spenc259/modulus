@@ -5,7 +5,7 @@ function google_fonts_url() {
 
 	$font_families = array();
 
-	$font_families = ['Comfortaa:300,400,700'];
+	$font_families = ['Open+Sans:300,400,700'];
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),

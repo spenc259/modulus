@@ -6,7 +6,7 @@
  */
 function ip_main_scripts() {
 	global $wp_scripts;
-	wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/main.js#asyncload', array('jquery'), false, true);
+	wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/main.js#asyncload', array('my-jquery'), false, true);
 }
 add_action('wp_enqueue_scripts', 'ip_main_scripts');
 
@@ -21,7 +21,7 @@ function ip_custom_jquery()
 	wp_deregister_script('jquery'); // removes the wordpress default
 	wp_enqueue_script('my-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js#asyncload', array(), null, true);
 }
-
+add_action('wp_enqueue_scripts', 'ip_custom_jquery');
 
 
 /**
@@ -30,7 +30,7 @@ function ip_custom_jquery()
  */
 function ip_bootstrap_js()
 {
-	wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js#asyncload', array('jquery'), '4.0.0', true);
+	wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js#asyncload', array(), '4.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'ip_bootstrap_js');
 
@@ -126,10 +126,10 @@ function ip_make_script_defer( $tag, $handle, $src )
 	);
 
 	if ( !in_array($handle, $handles) ) {
-		return $tag;
+        return $tag;
 	}
 
-	return str_replace( '<script', '<script defer', $tag );
+    return str_replace( '<script', '<script defer', $tag );
 }
 add_filter( 'script_loader_tag', 'ip_make_script_defer', 10, 3 );
 

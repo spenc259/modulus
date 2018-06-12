@@ -1,8 +1,7 @@
-
 <div class="panel-group" id="accordion">
-<?php $count = 0; ?>
-<?php foreach ($module['item'] as $item ) : $count++;?>
-    <div class="panel-heading">
+    <?php $count = 0; ?>
+    <?php foreach ($module['item'] as $item ) : $count++;?>
+        <div class="panel-heading">
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $count; ?>">
                     <?php echo $item['heading']; ?>
@@ -14,6 +13,5 @@
                 <?php echo $item['text']; ?>
             </div>
         </div>
-    </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 </div>

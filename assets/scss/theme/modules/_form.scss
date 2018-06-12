@@ -2,6 +2,26 @@
 	display: none;
 }
 
+.steps {
+	.step-number {
+		text-align: center;
+		display: flex;
+		flex-flow: column;
+
+		.number {
+			background: #b5bfb6;
+			border-radius: 100%;
+			text-align: center;
+			padding: 2rem;
+			color: white;
+
+			&.active {
+				background: green;
+			}
+		}
+	}
+}
+
 #myform {
 	.error-wrap {
 		background: #ed5b56;
@@ -12,6 +32,15 @@
 
 		p {
 			margin: 0;
+		}
+	}
+
+	.step {
+		display: none;
+
+		&.active {
+			display: flex;
+			flex-flow: wrap;
 		}
 	}
 
