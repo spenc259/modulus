@@ -20,16 +20,15 @@ function logo()
 	$image = "http://wordpress.test/ping/wp-content/uploads/2018/04/19544-Main-Brand-Landing-Page-AW_22.png";
 	
 
-	$home = site_url(); 
-echo <<< HTML
-		<a href="$home">
-			<div class="row logo align-items-center">
-				<div class="col-auto pr-0">$logo</div>
-				<div class="col-auto pl-1"><img src="$image" /></div>
-			</div>
-			
-		</a>
-HTML;
+	$home = site_url();
+	?>
+	<a href="<?php echo $home; ?>">
+		<div class="row logo align-items-center">
+			<div class="col-auto pr-0"><?php echo $logo; ?></div>
+			<div class="col-auto pl-1"><img src="<?php echo $image; ?>" /></div>
+		</div>
+	</a>
+	<?php 
 }
 add_action('header_left', 'logo');
 
@@ -39,7 +38,13 @@ function search()
 {
 	get_sidebar();
 }
-add_action('header_right', 'search');
+// add_action('header_right', 'search');
+
+function button()
+{
+	echo '<a href="'. site_url() .'"><button>Buy Now</button></a>';
+}
+// add_action('header_right', 'search');
 
 
 function hero()

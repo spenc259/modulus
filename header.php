@@ -24,21 +24,21 @@
 	<header id="site-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div class="col-xs-6 col-sm-2 logo attached-left" id="logo">
-						<?php
-						do_action('header_left');
-						?>
-					</div>
+				<div class="col-auto mr-auto" id="logo">
+					<?php
+					do_action('header_left');
+					?>
+				</div>
 
-					<div class="col-sm-10 desktop">
-						<?php 
-						do_action('header_right'); 
-						?>
-					</div>
+				<div class="col-auto">
+					<?php 
+					// do_action('header_right'); 
+					echo '<a href="'. site_url() .'"><button>Buy Now</button></a>';
+					?>
 				</div>
 			</div>
+			<?php do_action('after_header'); ?>
 		</div>
 	</header>
 
-	<?php do_action('after_header'); ?>
+	
