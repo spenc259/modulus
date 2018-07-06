@@ -2,6 +2,53 @@
 	display: none;
 }
 
+table {
+	text-align: center;
+	font-size: 14px;
+	margin: 4rem 0 6rem;
+
+	th {
+		padding: 1rem;
+		background: $secondary;
+		color: white;
+		border: 1px solid $primary;
+	}
+
+	td {
+		border: 1px solid $primary;
+		background: white;
+
+		&.bronze {
+			background: rgb(173, 114, 37);
+			color: white;
+		}
+
+		&.silver {
+			background: rgb(206, 194, 178);
+			color: white;
+		}
+
+		&.gold {
+			background: rgb(223, 176, 47);
+			color: white;
+		}
+
+		&.platinum {
+			background: rgb(190, 181, 170);
+			color: white;
+		}
+
+		&.check {
+			background: green;
+			color: white;
+		}
+
+		.fas.fa-check {
+			font-size: 24px;
+		}
+	}
+}
+
 .steps {
 	.step-number {
 		text-align: center;

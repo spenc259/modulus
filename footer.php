@@ -1,5 +1,5 @@
 <div class="sub_footer container">
-	<img src="/ping/core/radar_sub_footer.png" alt="Ping Radar Logo" />
+	<img src="<?php echo site_url() . '/core/radar_sub_footer.png'; ?>" alt="Ping Radar Logo" />
 </div>
 <footer id="site-footer">
 	<div class="container">

@@ -25,14 +25,18 @@ try {
 				});
 
 				// find elements
-				var bucket_title = $('h3');
-				var bucket_info = $('ul');
+				var bucket_title = $('a.read_more');
+				var bucket_info = $('.hide');
 
 				// handle click and add class
 				bucket_title.on('click', function() {
-					var open = $(this).next(bucket_info).toggleClass('active').removeClass('unactive');
+					console.log('hit');
+					var open = $(this).parent().next(bucket_info).toggleClass('active').removeClass('unactive');
 					if (!open.hasClass('active')) {
 						open.toggleClass('unactive');
+						$(this).text('READ MORE >');
+					} else {
+						$(this).text('READ LESS <');
 					}
 				});
 			});

@@ -23,7 +23,7 @@
 
 	<header id="site-header">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center mb-2">
 				<div class="col-auto mr-auto" id="logo">
 					<?php
 					do_action('header_left');
@@ -33,7 +33,7 @@
 				<div class="col-auto">
 					<?php 
 					// do_action('header_right'); 
-					echo '<a href="'. site_url() .'"><button>Buy Now</button></a>';
+					echo '<a href="'. site_url("/form") .'"><button>Buy Now</button></a>';
 					?>
 				</div>
 			</div>

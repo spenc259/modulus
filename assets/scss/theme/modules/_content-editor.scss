@@ -1,10 +1,17 @@
-.content-editor {
+.content-editor,
+.icon_title_content {
 	// border: $border;
 	// border-radius: $border-radius;
 	// padding: $padding;
 	margin: 1rem auto;
 
-	ul {
+	a.read_more {
+		color: $secondary;
+		display: block;
+		cursor: pointer;
+	}
+
+	.hide {
 		opacity: 0;
 		visibility: hidden;
 		font-size: 0;
@@ -20,6 +27,10 @@
 			font-size: initial;
 			visibility: visible;
 			transition: all 0.2s ease-in;
+		}
+
+		ul {
+			margin: 0;
 		}
 	}
 }

@@ -131,6 +131,11 @@ require get_template_directory() . '/inc/events/event.php';
  */
 require get_template_directory() . '/inc/form.php';
 
+/**
+ * SOAP Request
+ * @since 0.3.0
+ */
+require get_template_directory() . '/inc/soap.php';
 
 /**
  * Modal

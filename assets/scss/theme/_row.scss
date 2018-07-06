@@ -14,15 +14,20 @@
 
 	button {
 		background: #29235c;
+		font-weight: 600;
 		position: relative;
 		&:before {
 			content: '';
 			position: absolute;
-			left: -50px;
-			background: url('/ping/core/buy_now_icon.png');
+			left: 28px;
+			background: url('/core/buy_now_icon.png') no-repeat;
+			background-size: auto auto;
 			height: 44px;
-			width: 44px;
-			top: -12px;
+			width: 30px;
+			top: 26px;
+			bottom: 0;
+			background-size: contain;
+			filter: brightness(0) invert(1);
 		}
 	}
 }

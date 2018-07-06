@@ -17,7 +17,7 @@ add_action('front-page', 'sections');
 function logo()
 {
 	$logo = get_option('options_branding_logo_svg');
-	$image = "http://wordpress.test/ping/wp-content/uploads/2018/04/19544-Main-Brand-Landing-Page-AW_22.png";
+	$image = site_url() . "/wp-content/uploads/2018/04/19544-Main-Brand-Landing-Page-AW_22.png";
 	
 
 	$home = site_url();
@@ -49,9 +49,13 @@ function button()
 
 function hero()
 {
+	if ( !is_home() ) {
+		return;
+	}
+		
 	?>
 		<div class="row hero">
-			<div class="col-6 pt-4 pb-2">
+			<div class="col-6 pt-5 pb-2 px-5">
 				<h2 class="green">Breakdown <br>Cover</h2>
 				<p>Ping Breakdown covers a range of Breakdown Cover policies offer you great value for money, with some features only available on other, more expensive products.</p>
 				<p>You’ll be safe in the knowledge that you’ll be covered by a 24 hour network of professional and highly experienced national breakdown operators.</p>
@@ -59,7 +63,7 @@ function hero()
 			</div>
 			<div class="col-6 pr-0">
 				<div class="img-logo">
-					<img src="/ping/core/hero.jpg" alt="Man looking under the bonnet of a car" />
+					<img src="<?php echo site_url() . '/core/hero.jpg'; ?>" alt="Man looking under the bonnet of a car" />
 				</div>
 			</div>
 		</div>

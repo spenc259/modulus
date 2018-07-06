@@ -9,7 +9,7 @@ function sections() {
 	if ( !is_home() ) {
 		$rows = get_post_meta( $post->ID, 'build_a_row' );
 		if ( get_field('build_a_row') ) { 
-			$rows = get_field('build_a_row'); 
+			$rows = get_field('build_a_row');
 		} else {
 			$rows = array();
 		}
