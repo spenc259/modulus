@@ -5,7 +5,7 @@ function scss_compile_check() {
 	/* If any changes have been made to any scss files, recompile */
 
 	$has_changes = false;
-	$scss_files = get_template_directory() . '/assets/scss/';
+	$scss_files = get_template_directory() . '/source/assets/scss/';
 	$input_files = array();
 
 	/* Loop through all folders and subfolders in */

@@ -111,7 +111,7 @@ function array_swap(&$array,$swap_a,$swap_b){
 /**
  * Remove the Admin bar for non admins
  */
-add_action('after_setup_theme', 'remove_admin_bar');
+// add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
     if (!is_admin()) {
         show_admin_bar(false);

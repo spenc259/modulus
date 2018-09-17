@@ -2,6 +2,6 @@
 
 get_header();
 
-get_template_part( 'template-parts/content-parts/content', 'page' );
+get_template_part( 'templates/content-parts/page/content', 'page' );
 
 get_footer();

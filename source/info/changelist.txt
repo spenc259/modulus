@@ -1,0 +1,19 @@
+Organisation 
+ - template-parts folder to templates
+ - root folder
+ - added a deploy folder for minified assets
+ - added a source folder to develop from
+ - sorted the incs folder
+
+Additions
+ - package.json
+ - gitignore
+ - searchform (twentyseventeen)
+ - comments
+
+Amendments
+ - changed required plugins to Gutenberg
+ - updated functions to reflect any new paths
+
+Removals
+ - any trace of ACF

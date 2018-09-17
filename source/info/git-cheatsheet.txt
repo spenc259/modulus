@@ -1,0 +1,11 @@
+git clone [repo url]
+
+git status
+
+git remote -v
+git remote add [remote name] [remote url]
+
+git add * (add all files to local branch)
+git commit -m "[commit message]" (commits to local branch)
+git push [remote name] [local branch]
+

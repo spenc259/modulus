@@ -1,0 +1,33 @@
+header {
+	padding: 2rem;
+	// background: blue;
+	color: white;
+
+	a {
+		color: blue;
+		font-size: 20px;
+	}
+
+	button {
+		background: transparent;
+		color: $secondary;
+		position: relative;
+		padding: 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -50px;
+			background: url('/core/buy_now_icon.png');
+			height: 44px;
+			width: 44px;
+			top: -12px;
+		}
+	}
+
+	.hero {
+		.img-logo img {
+			width: 100%;
+		}
+	}
+}

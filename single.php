@@ -1,19 +1,7 @@
-<?php get_header(); ?> 
+<?php 
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-8 content-area" id="main-column">	
-			<?php  while (have_posts())  : ?>
-				<?php
-				the_post();
-				get_template_part('template-parts/singles/single', get_post_type());
-				if (comments_open() || '0' != get_comments_number()) {
-					comments_template();
-				}
-				?>
-			<?php endwhile; ?>
-		</div>
-	</div>
-</div>
+get_header();
 
-<?php get_footer(); ?> 
+get_template_part( 'template-parts/content-parts/posts/content', get_post_type() );
+
+get_footer();
