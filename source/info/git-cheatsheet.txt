@@ -1,13 +1,18 @@
+git config --local user.name "[enter username]"
+git config --local user.email "[enter email]"
+
 git clone [repo url]
 
 git status
 
-git remote -v
+git remote
+git remote -v (full location)
 git remote add [remote name] [remote url]
+
 
 git add * (add all files to local branch)
 git commit -m "[commit message]" (commits to local branch)
-git push [remote name] [local branch]
+git push [remote name] [remote branch]
 
 git diff
 
