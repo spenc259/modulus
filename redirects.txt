@@ -1,5 +1,0 @@
-# Redirects
-Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
-
-/club/history/formation > /club/history
-/club/history/by-season > /club/history

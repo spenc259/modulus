@@ -5,3 +5,5 @@ todo.txt
 /assets/.DS_Store
 /assets/scss/.DS_Store
 /inc/.DS_Store
+/inc/needs-revision/
+node_modules

@@ -9,3 +9,12 @@ git add * (add all files to local branch)
 git commit -m "[commit message]" (commits to local branch)
 git push [remote name] [local branch]
 
+git diff
+
+git branch [branch name]
+git checkout branch
+
+git log
+
+alias graph="git log --all --decorate --oneline --graph"
+graph
