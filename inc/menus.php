@@ -1,6 +1,7 @@
 <?php
 register_nav_menus(array(
-	'primary' => __('Primary Menu', 'intimation-pro')
+	'primary' => __('Primary Menu', 'intimation-pro'),
+	'footer'	=> __('Footer Menu', 'intimation-pro')
 ));
 
 
@@ -24,11 +25,11 @@ function primary_nav()
 
 	?>
 
-	<button type="button" class="burger hidden-lg" data-toggle="collapse" data-target="#responsive-menu">
+	<button type="button" class="burger d-none" data-toggle="collapse" data-target="#responsive-menu">
 		<span></span>
 	</button>
 	
 	<?php
 
 }
-add_action('header_right', 'primary_nav');
+add_action('before_header', 'primary_nav');

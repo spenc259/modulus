@@ -21,10 +21,9 @@ function sections() {
 			$rows = array();
 		}
 	}
-	// echo '<pre>'; print_r($rows[0]); echo '</pre>';
 
 	foreach ( $rows as $row ) {
-		include( locate_template( 'template-parts/layouts/' . $row['acf_fc_layout'] . '.php' ) );
+		include( locate_template( 'templates/layouts/' . $row['acf_fc_layout'] . '.php' ) );
 	}
 }
 

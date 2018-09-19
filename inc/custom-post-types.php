@@ -4,7 +4,13 @@ $cpts = array(
 	'slides' => array(
 		'singular' => 'slide',
 		'display' => 'Slide',
-		'icon'		=> 'dashicons-calendar-alt'
+		'icon'		=> 'dashicons-format-gallery'
+	),
+	'spaces' => array(
+		'singular' => 'space',
+		'display' => 'space',
+		'icon' => 'dashicons-building',
+		'description' => 'this is my spaces description'
 	),
 );
 
@@ -35,7 +41,7 @@ function inti_cpt_generator( $cpts )
 			'view_item'          => __( 'View ' . $cpt['display'] ),
 			'search_items'       => __( 'Search ' . $cpt['display'] . 's' ),
 			'not_found'          => __( 'No ' . $cpt['display'] . 's found' ),
-			'not_found_in_trash' => __( 'No ' . $cpt['display'] . 's found in the Trash' ), 
+			'not_found_in_trash' => __( 'No ' . $cpt['display'] . 's found in the Trash' ),
 			'parent_item_colon'  => '',
 			'menu_name'          => $cpt['display'] . 's',
 		);
@@ -46,6 +52,7 @@ function inti_cpt_generator( $cpts )
 			'has_archive' => true,
 			'supports'    => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes' ),
 			'menu_icon'   => $cpt['icon'],
+			'description' => $cpt['description']
 		);
 
 		register_post_type( $cpt['singular'], $args );

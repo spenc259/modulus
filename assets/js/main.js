@@ -71,12 +71,12 @@ function waypoint(el) {
 		//console.log('waypoint shrink menu');
 		element.className = 'shrink';
 		// logo.setAttribute('class', 'shrink');
-		logo.className = 'col-xs-6 col-sm-2 logo attached-left shrink';
+		logo.className = 'col-6 col-sm-2 logo attached-left shrink';
 	} else {
 		//console.log('enlarge menu');
 		element.className = 'enlarge';
 		// logo.setAttribute('class', 'enlarge');
-		logo.className = 'col-xs-6 col-sm-2 logo attached-left enlarge';
+		logo.className = 'col-6 col-sm-2 logo attached-left enlarge';
 	}
 }
 

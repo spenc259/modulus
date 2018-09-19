@@ -21,24 +21,7 @@
 
 	<?php do_action('before_header'); ?>
 
-	<header id="site-header">
-		<div class="container">
-			<div class="row align-items-center mb-2">
-				<div class="col-auto mr-auto" id="logo">
-					<?php
-					do_action('header_left');
-					?>
-				</div>
 
-				<div class="col-auto">
-					<?php 
-					// do_action('header_right'); 
-					echo '<a href="'. site_url("/form") .'"><button>Buy Now</button></a>';
-					?>
-				</div>
-			</div>
-			<?php do_action('after_header'); ?>
-		</div>
-	</header>
-
+	<?php get_template_part( 'templates/content-parts/header/content', 'header' ); ?>
 	
+	<?php do_action('after_header'); ?>

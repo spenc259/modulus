@@ -6,7 +6,7 @@
 			<?php  while (have_posts())  : ?>
 				<?php
 				the_post();
-				get_template_part('template-parts/singles/single', get_post_type());
+				get_template_part('templates/singles/single', get_post_type());
 				if (comments_open() || '0' != get_comments_number()) {
 					comments_template();
 				}

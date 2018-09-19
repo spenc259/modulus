@@ -1,0 +1,25 @@
+Version 0.4.3
+    - tidied up various files
+    - add get field code for:
+    - cluster_map.php
+    - change slides cpt icon 
+    - add comments to each function in the following format
+        --
+        /**
+        * [function name]
+        * A short description
+        * @param [type] [name]
+        * @since [version]
+        */
+        --
+    - update some of the col css classes to take advantage of the new .col ( equal width )
+    - remove uneeded bootstrap files
+    - replaced templates with templates folder
+    - removed acf-field-template empty folder
+    - added a changelog
+    - moved todo to a theme info folder
+    - moved redirects to a theme info folder
+    - moved readme to a theme info folder
+    - moved README to a theme info folder
+    - moved LICENCE to a theme info folder
+    - smaple text for the header, hero and footer templates
