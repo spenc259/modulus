@@ -2,6 +2,7 @@
 
 /**
  * SOAP Requests
+ * @since 0.4.2
  * https://stackoverflow.com/questions/11593623/how-to-make-a-php-soap-call-using-the-soapclient-class
  */
 

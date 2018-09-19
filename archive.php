@@ -15,7 +15,7 @@ get_header(); ?>
                 while ( have_posts() ) {
                     the_post();
 
-                    get_template_part('template-parts/pages/content', get_post_type());
+                    get_template_part('templates/pages/content', get_post_type());
 
                 }
             } else {
