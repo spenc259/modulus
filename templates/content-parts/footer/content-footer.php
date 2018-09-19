@@ -11,24 +11,37 @@
 				<div class="row">
 					<div class="col-auto mr-auto">
 						<img src="" alt="Footer Logo" srcset="">
-						<?php do_action('footer-menu'); ?>
+						<?php 
+							do_action('footer-menu');
+							$contact_info = get_field('contact_info', 'option');
+						?>
 						<address>
-							<?php echo get_field('address', 'option'); ?>
+							<?php echo $contact_info['address']; ?>
 						</address>
 						<div class="tel">
-							<?php echo get_field('telephone', 'option'); ?>
+							<?php echo $contact_info['telephone']; ?>
 						</div>
 						<div class="email">
-							<?php echo get_field('email', 'option'); ?>
+							<?php echo $contact_info['email']; ?>
 						</div>
 						<div class="copy">
 							<?php echo "&copy;" . date_i18n('Y'); ?>
 						</div>
 					</div>
 					<div class="col-auto">
-
+						<h3 class="uppercase">Get in touch with Maxim</h3>
+						<h4 class="uppercase">Leasing Team</h4>
+						<?php 
+							echo 'Team list here';
+						?>
 					</div>
-					<div class="col-auto"></div>
+					<div class="col-auto">
+						people icon
+						<h4 class="uppercase">What our clients say</h4>
+						<?php 
+							echo 'Testimonials here';
+						?>
+					</div>
 				</div>
 			</div>
 		</footer>
