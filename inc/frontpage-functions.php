@@ -16,13 +16,22 @@ add_action('front-page', 'sections');
  */
 function logo()
 {
-	$logo = get_option('options_branding_logo_svg');
-	$image = site_url() . "/wp-content/uploads/2018/04/19544-Main-Brand-Landing-Page-AW_22.png";
+	$logo = wp_get_attachment_image( get_option('options_branding_logo_image') );
 	$home = site_url();
 
-	get_template_part( 'templates/content-parts/home/content', 'branding' );
+	include( locate_template( 'templates/content-parts/home/content-branding.php', false, false ) ); 
 }
 add_action('header_left', 'logo');
+
+
+/**
+ * Social Media Icons
+ */
+function SoMeIcons()
+{
+	get_template_part( 'templates/content-parts/home/content', 'social' );
+}
+add_action('header_right', 'SoMeIcons');
 
 
 function hero()

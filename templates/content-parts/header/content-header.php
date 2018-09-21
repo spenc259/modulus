@@ -9,6 +9,12 @@
 
             <div class="col-auto">
                 <?php 
+                do_action('header_middle'); 
+                ?>
+            </div>
+
+            <div class="col-auto">
+                <?php 
                 do_action('header_right'); 
                 ?>
             </div>

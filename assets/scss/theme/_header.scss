@@ -1,6 +1,6 @@
 header {
 	padding: 2rem;
-	// background: blue;
+	background: black;
 	color: white;
 
 	a {
@@ -24,10 +24,24 @@ header {
 			top: -12px;
 		}
 	}
+}
 
-	.hero {
-		.img-logo img {
-			width: 100%;
-		}
+.hero {
+	.img-logo img,
+	img {
+		width: 100%;
+	}
+}
+
+.cta_banner {
+	background: black;
+	color: $primary;
+	text-align: center;
+	margin: 1rem auto;
+	padding: 0 2rem 3rem;
+
+	p {
+		max-width: 66%;
+		margin: auto;
 	}
 }

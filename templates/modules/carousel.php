@@ -1,6 +1,6 @@
 
 
-<section class='carousel'>
+<section class='carousel <?php echo $module['class']; ?>'>
     <?php if ( !empty($module['add_title']) || $module['add_title'] === 1 ) : ?>
         <?php echo '<' . $module['title']['title_button'] . '>' . $module['title']['title_text'] . '</' . $module['title']['title_button'] . '>'; ?>
     <?php endif; ?>

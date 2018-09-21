@@ -13,17 +13,22 @@
 
 /* Theme */
 @import "/theme/general";
+@import "/theme/nav";
 @import "/theme/header";
 @import "/theme/hero";
-// @import "/theme/footer";
+@import "/theme/footer";
 
 /* Row */
 // @import "/theme/row";
 
 /* Modules */
-// @import "/theme/modules/heading";
+@import "/theme/modules/cpt";
 // @import "/theme/modules/content-editor";
 // @import "/theme/modules/form";
 
 /* pages */
 // @import "/theme/home";
+
+/* plugins */
+@import "/owl/owl.carousel";
+@import "/owl/owl.theme.default";

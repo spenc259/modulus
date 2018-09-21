@@ -44,7 +44,7 @@ function ip_owl_carousel()
 {
 	wp_enqueue_script('owl', get_template_directory_uri() . '/assets/js/vendor/owl.carousel.min.js#asyncload', array(), null, true);
 }
-// add_action('wp_enqueue_scripts', 'ip_owl_carousel');
+add_action('wp_enqueue_scripts', 'ip_owl_carousel');
 
 
 
