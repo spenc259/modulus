@@ -352,7 +352,10 @@ $_SESSION['START'] = 'start';
 			// let pdf = document.getElementById("generate_pdf");
 			let username = document.getElementById("username");
 			let soap = document.getElementsByClassName('soap');
-
+			
+			let table = document.getElementById("policy_table");
+			table.classList.remove('d-flex');
+			table.classList.add('d-none');
 
 			/**
 			 * Event listeners
@@ -519,8 +522,12 @@ $_SESSION['START'] = 'start';
 					data[inputs[i].name] = inputs[i].value;
 				}
 
-				if (step === 1 ) {
-					
+				console.log(step);
+				
+
+				if (step === 2 ) {
+					table.classList.remove('d-none');
+					table.classList.add('d-flex');
 				}
 
 				if (step === 2 ) {

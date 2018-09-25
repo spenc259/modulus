@@ -9188,6 +9188,12 @@ table {
   position: relative;
   top: 40%;
   color: white; }
+
+.policy-links {
+  justify-content: space-evenly;
+  padding-bottom: 2rem; }
+  .policy-links a {
+    color: #56a9bc; }
 /* pages */
 .bucket {
   justify-content: space-between; }

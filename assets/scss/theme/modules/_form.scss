@@ -244,3 +244,13 @@ table {
 	top: 40%;
 	color: white;
 }
+
+.policy-links {
+	justify-content: space-evenly;
+	padding-bottom: 2rem;
+	font-size: 1.2rem;
+
+	a {
+		color: $secondary;
+	}
+}
