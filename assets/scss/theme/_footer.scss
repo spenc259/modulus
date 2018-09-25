@@ -13,9 +13,43 @@ footer {
 }
 
 #site-footer {
-	background: $secondary;
+	background: black;
+	color: white;
+
+	font-size: 0.9rem;
+
+	nav {
+		ul {
+			margin: 1rem 0;
+			padding: 0;
+
+			display: flex;
+
+			list-style: none;
+
+			li {
+				&:nth-of-type(1) a {
+					padding-left: 0;
+				}
+
+				a {
+					color: $secondary;
+				}
+			}
+		}
+	}
 	a {
 		padding: 0 1rem;
 		color: white;
+	}
+
+	.tel,
+	.email {
+		font-weight: 600;
+	}
+
+	.copy {
+		color: $secondary;
+		margin: 1rem 0;
 	}
 }

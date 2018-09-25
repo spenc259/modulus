@@ -2,6 +2,10 @@
 
 /* Framework */
 @import "/bootstrap/bootstrap";
+@import "/owl/owl.carousel";
+// @import "/owl/owl.theme.default";
+// @import "/owl/owl.theme.green";
+
 // @import "/font-awesome/fontawesome";
 // @import "/font-awesome/fa-solid";
 
@@ -18,17 +22,12 @@
 @import "/theme/hero";
 @import "/theme/footer";
 
-/* Row */
-// @import "/theme/row";
-
 /* Modules */
 @import "/theme/modules/cpt";
-// @import "/theme/modules/content-editor";
-// @import "/theme/modules/form";
+@import "/theme/modules/carousel";
+@import "/theme/modules/news";
+@import "/theme/modules/twitter_feed";
 
-/* pages */
-// @import "/theme/home";
-
-/* plugins */
-@import "/owl/owl.carousel";
-@import "/owl/owl.theme.default";
+/* blocks */
+@import "/theme/modules/blocks/maxim_discount";
+@import "/theme/modules/blocks/events_slider";

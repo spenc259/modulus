@@ -40,14 +40,28 @@ try {
 					}
 				});
 
-				$('.carousel').owlCarousel({
-					center: true,
-					items: 2,
+				$('.carousel-module').owlCarousel({
 					loop: true,
+					nav: true,
+					items: 1,
+					dots: true,
+					lazyLoad: true,
 					margin: 10,
+					video: true,
+					itemElement: 'div class="image"',
+					navText: [ '&larr;', '&rarr;' ],
 					responsive: {
+						0: {
+							items: 1
+						},
 						600: {
-							items: 4
+							items: 3
+						},
+						960: {
+							items: 5
+						},
+						1200: {
+							items: 6
 						}
 					}
 				});

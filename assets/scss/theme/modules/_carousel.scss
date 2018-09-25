@@ -1,14 +1,30 @@
 .carousel {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		text-align: center;
+	position: relative;
+
+	.owl-stage-outer {
+		max-width: 50%;
+		margin: auto;
 	}
 
-	.owl-height {
-		height: 300px;
+	.owl-nav.disabled {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		.owl-prev {
+			position: absolute;
+			left: 0;
+		}
+
+		.owl-next {
+			position: absolute;
+			right: 0;
+		}
+
+		.owl-prev,
+		.owl-next {
+			padding-top: 12px;
+		}
 	}
 }
