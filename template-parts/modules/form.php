@@ -118,9 +118,9 @@ $_SESSION['START'] = 'start';
 			<input type="text" class="w-100 mb-2" name="date_of_registration" placeholder="date_of_registration*" id="date_of_registration">
 		</div>
 		-->
-		<div class="col-sm-6 mileage">
+		<!-- <div class="col-sm-6 mileage">
 			<input type="text" class="w-100 mb-2" name="mileage" placeholder="Approx mileage*" id="mileage">
-		</div>
+		</div> -->
 		<div class="w-100"></div>
 		<div class="col-auto mr-auto mb-2 mb-sm-0">
 			<button type="submit" class="btn2 prev small col-auto">go back to step 1</button>
@@ -789,7 +789,7 @@ $_SESSION['START'] = 'start';
 								engine_size: $('#engine_size').val(),
 								fuel_type: $('#fuel_type').val(),
 								transmission: $('#transmission').val(),
-								mileage: $('#mileage').val(),
+								// mileage: $('#mileage').val(),
 								policy_start_date: $('#policy_start_date').val(),
 								cover_level: $('#cover_level').val(),
 								plan: $('#final_policy').val(),
