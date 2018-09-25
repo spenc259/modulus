@@ -1,0 +1,17 @@
+.bucket {
+	justify-content: space-between;
+}
+
+.icon_title_content {
+	h3 {
+		color: $secondary;
+		font-weight: 600;
+		font-family: "Open Sans", sans-serif;
+		line-height: 1.1;
+	}
+
+	p {
+		color: lighten(black, 35%);
+		max-width: 79%;
+	}
+}

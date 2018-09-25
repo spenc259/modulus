@@ -1,0 +1,31 @@
+.form {
+	padding: 2rem;
+	background: white;
+	margin-bottom: 6rem;
+
+	label {
+		width: 100%;
+		text-transform: uppercase;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	input[type=checkbox] {
+		width: auto;
+		position: relative;
+		bottom: 2px;
+	}
+
+	.login-submit {
+		margin: 0;
+	}
+
+	#wp-submit {
+		border: none;
+		padding: 1rem 3rem;
+		background: $secondary;
+		color: white;
+	}
+}

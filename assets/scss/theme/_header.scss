@@ -1,0 +1,72 @@
+header {
+	// padding: 2rem;
+	// background: blue;
+	color: white;
+
+	a {
+		color: blue;
+		font-size: 20px;
+	}
+
+	.logo {
+		@include media-breakpoint-down(sm) {
+			img {
+				max-width: 85%;
+			}
+
+			svg {
+				width: 55px;
+			}
+		}
+	}
+
+	button {
+		background: transparent;
+		color: $secondary;
+		position: relative;
+		padding: 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -50px;
+			background: url('/core/buy_now_icon.png');
+			height: 44px;
+			width: 44px;
+			top: -12px;
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		button {
+			padding: 10px 0 0 50px;
+			&:before {
+				content: '';
+				// position: absolute;
+				left: 0px;
+				// background: url('/core/buy_now_icon.png');
+				// height: 44px;
+				// width: 44px;
+				top: 0px;
+			}
+		}
+	}
+
+	.hero {
+		h2 {
+			font-size: $h2;
+		}
+		.img-logo img {
+			width: 100%;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	header {
+		.hero {
+			h2 {
+			}
+		}
+	}
+}
