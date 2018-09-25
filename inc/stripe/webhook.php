@@ -121,7 +121,7 @@ function notify_admin_of_documents_by_post($customer, $event)
     $user = get_user_by_email($customer['email']);
     $send = get_user_meta($user->ID, 'post_documents', true);
 
-    echo '<pre>'; var_dump(print_r($send)); echo '</pre>';
+    // echo '<pre>'; var_dump(print_r($send)); echo '</pre>';
 
     if ( $send ) {
         $headers = array('Content-Type: text/html; charset=UTF-8');

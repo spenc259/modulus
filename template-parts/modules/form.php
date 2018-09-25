@@ -274,7 +274,7 @@ $_SESSION['START'] = 'start';
 
 		<div class="col-sm-6 auto-renew">
 			<div class="row">
-				<label for="auto-renew" class="col-10">Auto renew your policy after a year</label>
+				<label for="auto-renew" class="col-10">Cancel Auto renew of your policy after a year</label>
 				<input type="checkbox" class="w-100 mb-2 col-2" name="auto-renew" placeholder="auto-renew*" id="auto_renew">
 			</div>
 			<div class="row">

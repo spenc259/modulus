@@ -247,14 +247,15 @@ function test_handle_new_signup()
 		));
 
 		if ( $_POST['auto_renew'] === 'false') {
+			$_POST['auto_renew'] = true;
+		} else {
+			
 			$cancelsub = \Stripe\Subscription::retrieve($subscription->id);
 			$cancelsub->cancel_at_period_end = true;
 			$cancelsub->save();
 
 			// wp_send_json_success($cancelsub);
 			$_POST['auto_renew'] = false;
-		} else {
-			$_POST['auto_renew'] = true;
 		}
 
 		if ( $_POST['post_docs'] === 'false') {
