@@ -105,6 +105,8 @@ function send_policy_documents( $event )
 
     wp_mail( $to, $subject, $body, $headers, $attachments );
 
+    send_user_login_details($customer);
+
     http_response_code(200);
 }
 
@@ -113,6 +115,22 @@ function attach_to_user( $customer )
 {
     $user = get_user_by_email($customer['email']);
     return update_field('documents', $customer['policy_number'] . '.pdf', 'user_' . $user->ID);
+}
+
+function send_user_login_details( $customer )
+{
+    $user = get_user_by_email($customer['email']);
+
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $headers[] = 'Bcc:paul.test@intimation.co.uk';
+    $to = $customer['email'];
+    $subject = 'Ping Insure - Your Login Details';
+
+    $body = 'Thank you for choosing Ping Breakdown Cover, please login to your account if you wish to retrieve your documents at a later date.<br>';
+    $body = 'You can login by visiting <a href="' . site_url('/login') . '">Your account<a>';
+    $body .= 'Username: ' . $user->user_login . '<br>';
+
+    wp_mail($to, $subject, $body, $headers);
 }
 
 

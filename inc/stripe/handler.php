@@ -1,192 +1,5 @@
 <?php
 
-// update a members default funding source (card)
-
-add_action( 'wp_ajax_update_stripe_source', 'update_stripe_source' );
-
-function update_stripe_source() {
-
-	Stripe\Stripe::setApiKey(get_stripe_secret_key());
-
-	if (isset($_POST['token'])) {
-
-		try {
-
-			$cu = \Stripe\Customer::retrieve(get_stripe_customer_id());
-			$cu->source = $_POST['token'];
-			$cu->save();
-
-			$card = get_stripe_default_source();
-
-			$r['brand'] = $card->brand;
-			$r['last4'] = $card->last4;
-			$r['expires'] = $card->exp_month . '/' . $card->exp_year;
-			$r['postcode'] = $card->address_zip;
-
-			wp_send_json_success($r);
-
-		}
-
-		catch(Exception $e) {
-
-			wp_send_json_error($e);
-
-		}
-	}
-}
-
-// add a subscription to a customer based on the plan and logged in user ID
-
-add_action( 'wp_ajax_add_stripe_subscription', 'add_stripe_subscription' );
-
-function add_stripe_subscription() {
-
-	\Stripe\Stripe::setApiKey(get_stripe_secret_key());
-
-	try {
-
-		// TODO check does this member already own this subscription?
-		// TODO check is this a valid plan?
-		// TODO is there a default card?
-		// TODO is there 3D secure? Hanlde 3D secure
-
-		\Stripe\Subscription::create(array(
-			"customer" => get_stripe_customer_id(),
-			"items" => array(
-				array(
-					"plan" => $_POST['plan'],
-				),
-			)
-		));
-
-		wp_send_json_success();
-	}
-
-	catch(Exception $e) {
-
-		wp_send_json_error($e);
-
-	}
-}
-
-// disable auto renewals on a subscription
-
-add_action( 'wp_ajax_remove_stripe_subscription', 'remove_stripe_subscription' );
-
-function remove_stripe_subscription() {
-
-	\Stripe\Stripe::setApiKey(get_stripe_secret_key());
-
-	try {
-		$sub = \Stripe\Subscription::retrieve($_POST['sub']);
-		$sub->cancel(array('at_period_end' => true));
-		wp_send_json_success();
-	}
-
-	catch(Exception $e) { 
-
-		wp_send_json_error($e);
-
-	}
-}
-
-// switch customer subscription
-
-add_action('wp_ajax_transfer_stripe_subscription', 'transfer_stripe_subscription');
-
-function transfer_stripe_subscription() {
-
-	\Stripe\Stripe::setApiKey(get_stripe_secret_key());
-
-	try {
-
-		$subscription = \Stripe\Subscription::retrieve($_POST['sub']);
-		$itemID = $subscription->items->data[0]->id;
-
-		\Stripe\Subscription::update($_POST['sub'], array(
-			"items" => array(
-				array(
-					"id" => $itemID,
-					"plan" => $_POST['plan'],
-				),
-			),
-		));
-
-		$id = \Stripe\Invoice::create(array(
-			"customer" => get_stripe_customer_id(),
-		));
-
-		$invoice = \Stripe\Invoice::retrieve($id->id);
-		$invoice->pay();
-
-		wp_send_json_success();
-
-	}
-
-	catch(Exception $e) {
-
-		wp_send_json_error($e);
-
-	}
-}
-
-// add product to users account
-
-add_action( 'wp_ajax_add_stripe_product', 'add_stripe_product' );
-
-function add_stripe_product() {
-
-	\Stripe\Stripe::setApiKey(get_stripe_secret_key());
-
-	try {
-
-		$order_id = \Stripe\Order::create(array(
-			'items' => array(
-				array(
-					'type' => 'sku',
-					'parent' => $_POST['product']
-				)
-			),
-			'currency' => 'gbp',
-			'customer' => get_field('stripe_customer_id', 'user_' . wp_get_current_user()->ID)
-
-		));
-
-		$order_id = json_decode(json_encode($order_id))->id;
-
-		$order = \Stripe\Order::retrieve($order_id);
-
-		$order->pay(array(
-			"customer" => get_field('stripe_customer_id', 'user_' . wp_get_current_user()->ID)
-		));
-
-		// TODO only add the product if Stripe returns true
-
-		$row = array(
-			'field_5a4e23137f350' => $_POST['product']
-		);
-
-		add_row('field_5a4e23137f34f', $row, 'user_' . wp_get_current_user()->ID);
-
-		wp_send_json_success();
-
-	}
-
-	catch (Exception $e) {
-
-		wp_send_json_error($e);
-
-	}
-}
-
-// get an invoice for printing or whatever
-
-add_action( 'wp_ajax_ajax_get_stripe_customer_invoice', 'ajax_get_stripe_customer_invoice' );
-
-function ajax_get_stripe_customer_invoice() {
-	get_stripe_customer_invoice('in_1C09E4KGem285x9o6SFexV6E');
-}
-
 // the first charge made to new memberships when they sign up
 add_action( 'wp_ajax_nopriv_test_handle_new_signup', 'test_handle_new_signup' );
 add_action( 'wp_ajax_test_handle_new_signup', 'test_handle_new_signup' );
@@ -198,9 +11,9 @@ function test_handle_new_signup()
 
 	try {
 		// // check if username exists
-		if ( username_exists( $_POST['username'] ) ) {
-			wp_send_json_error( "Username exists, please choose another" );
-		}
+		// if ( username_exists( $_POST['username'] ) ) {
+		// 	wp_send_json_error( "Username exists, please choose another" );
+		// }
 
 		// check if user exists already
 		if ( email_exists( $_POST['email'] ) ) {
@@ -212,9 +25,11 @@ function test_handle_new_signup()
 			wp_send_json_error("There is no valid plan for your vehicle");
 		}
 
+		$username = strtoupper(substr($_POST['forename'], 0, 1)) . strtoupper(substr($_POST['surname'], 0, 1)) . $_POST['vehicle_registration'];
+
 		$user_data = array(
-			'user_login' => $_POST['username'],
-			'user_pass' => $_POST['password'],
+			'user_login' => $username,
+			'user_pass' => '',
 			'user_email' => $_POST['email'],
 			'first_name' => $_POST['forename'],
 			'last_name' => $_POST['surname']
@@ -226,7 +41,7 @@ function test_handle_new_signup()
 		}
 
 		// create user to get ID
-		$data['policy'] = 'PING' . strtoupper( substr($_POST['forename'],0, 1) ) . strtoupper( substr($_POST['surname'],0, 1) ) . $_POST['vehicle_registration'] . '00' . $user_id;
+		$data['policy'] = 'PING' . $username . '00' . $user_id;
 
 		$customer = \Stripe\Customer::create(array(
 			'email' => $_POST['email'],

@@ -62,6 +62,7 @@ $_SESSION['START'] = 'start';
 				<input type="text" class="w-100 mb-2" name="email" placeholder="email*" id="email">
 			</div>
 			<div class="w-100"></div>
+			<!--
 			<div class="col-12 my-2">
 				<h3>Account Details</h3>
 				<p>In order to view your documents at a later date you will need to create a username.</p>
@@ -72,6 +73,7 @@ $_SESSION['START'] = 'start';
 			<div class="col-sm-6 password">
 				<input type="password" class="w-100 mb-2" name="password" placeholder="password*" id="password">
 			</div>
+			-->
 			<div class="w-100"></div>
 			<div class="col-auto mr-auto">
 				<!-- <button type="submit" class="btn1 small col-auto prev">start</button> -->
@@ -360,7 +362,7 @@ $_SESSION['START'] = 'start';
 			let finalPolicy = document.getElementById("final_policy");
 			let policyStartDate = document.getElementById("policy_start_date");
 			let policyStartDate2 = document.getElementById("policy_start_date2");
-			let username = document.getElementById("username");
+			// let username = document.getElementById("username");
 			let soap = document.getElementsByClassName('soap');
 			
 			let table = document.getElementById("policy_table");
@@ -374,12 +376,12 @@ $_SESSION['START'] = 'start';
 			/**
 			 * Event listeners
 			 */
-			username.addEventListener( 'blur', function(){
-				let data = {
-					"username" : username.value
-				}
-				sendAjaxRequest(data, "checkUserName");
-			}, true)
+			// username.addEventListener( 'blur', function(){
+			// 	let data = {
+			// 		"username" : username.value
+			// 	}
+			// 	sendAjaxRequest(data, "checkUserName");
+			// }, true)
 
 
 
@@ -505,38 +507,38 @@ $_SESSION['START'] = 'start';
 						}
 					}
 
-					if ( inputs[i].value && inputs[i].name === 'username' ) {
-						// valid = false;
+					// if ( inputs[i].value && inputs[i].name === 'username' ) {
+					// 	// valid = false;
 
-						let userdata = {
-							"username" : inputs[i].value
-						}
-						sendAjaxRequest(userdata, "checkUserName", function (response) {
-							let newresponse = JSON.parse(response)
+					// 	let userdata = {
+					// 		"username" : inputs[i].value
+					// 	}
+					// 	sendAjaxRequest(userdata, "checkUserName", function (response) {
+					// 		let newresponse = JSON.parse(response)
 							
-							if (!newresponse.success) {
-								valid = false;
-								showErrors(newresponse.data);
-								console.log('Success: False');
-							}
-						})
+					// 		if (!newresponse.success) {
+					// 			valid = false;
+					// 			showErrors(newresponse.data);
+					// 			console.log('Success: False');
+					// 		}
+					// 	})
 						
-							// else {
-							// 	console.log("username else")
-							// 	for (var prop in errors) {
-							// 		if (errors.hasOwnProperty(prop)) {
-							// 			console.log("prop: ", prop);
+					// 		// else {
+					// 		// 	console.log("username else")
+					// 		// 	for (var prop in errors) {
+					// 		// 		if (errors.hasOwnProperty(prop)) {
+					// 		// 			console.log("prop: ", prop);
 										
-							// 			// valid = false
-							// 		} else {
-							// 			console.log("prop False: ", prop);
-							// 			errorwrap.remove()
-							// 			displayNextStep( step );
-							// 		}
-							// 	}
-							// }
+					// 		// 			// valid = false
+					// 		// 		} else {
+					// 		// 			console.log("prop False: ", prop);
+					// 		// 			errorwrap.remove()
+					// 		// 			displayNextStep( step );
+					// 		// 		}
+					// 		// 	}
+					// 		// }
 						
-					}
+					// }
 
 
 					data[inputs[i].name] = inputs[i].value;
@@ -563,8 +565,7 @@ $_SESSION['START'] = 'start';
 
 				console.log("valid: ", valid)
 				console.log(errors);
-				// console.log(errors.length);
-				valid = true;
+				// valid = true; // only for testing
 
 				if (valid) {
 					sendAjaxRequest(data, "my_form");
