@@ -1,11 +1,9 @@
 <?php 
 
-include('form-table.php'); 
+include('form-table.php');
 
 $_SESSION['START'] = 'start';
 ?>
-
-<!-- <button id="generate_pdf">PDF</button> -->
 
 <div class="row steps mb-4 mt-4">
 	<div class="col step-number">
@@ -172,46 +170,7 @@ $_SESSION['START'] = 'start';
 
 	<!-- Step 4 - Payment -->
 	<div id="step4" class="step col-12">
-		<div class="col-12 mb-2">
-			<h3>Policy Summary</h3>
-		</div>
-
-		<!-- summary table -->
-		<div class="col-12 summary">
-			<table id="summary-table" class="mt-0">
-				<thead>
-					<tr>
-						<th class="highlight"><span>Product</span></th>
-						<th class="highlight"><span>Number of Callouts</th>
-						<th class="highlight"><span>Roadside Assist</span></th>
-						<th class="highlight"><span>Nationwide Recovery</span></th>
-						<th class="highlight"><span>Home Assist</span></th>
-						<th class="highlight"><span>Alternative Travel</span></th>
-						<th class="highlight"><span>Overnight Accomodataion</span></th>
-						<th class="highlight"><span>Driver illnes or injury</span></th>
-						<th class="highlight"><span>Mis-Fuel</span></th>
-						<th class="highlight"><span>European Breakdown</span></th>
-						<th class="highlight"><span>Excess</span></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="bronze"><span></span></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
 		
-		<div class="col-sm-6 duration">
-			<p class="w-100 mb-2">
-				<input type="text" name="duration" class="w-100 mb-2" id="duration" disabled placeholder="" value="12 Months">
-			</p>
-		</div>
-		<div class="col-sm-6 duration">
-			<p class="w-100 mb-2">
-				<input type="text" id="policy_cost_to_customer2" disabled placeholder="Policy Cost" value="Policy Cost:">
-			</p>
-		</div>
 
 		
 		<div class="col-12 mb-2">
@@ -278,9 +237,50 @@ $_SESSION['START'] = 'start';
 				<input type="checkbox" class="w-100 mb-2 col-2" name="auto-renew" placeholder="auto-renew*" id="auto_renew">
 			</div>
 			<div class="row">
-				<label for="post-docs" class="col-10">Do you want your documents posted to you?</label>
+				<label for="post-docs" class="col-10">Do you want your documents posted to you? ( +£2.50 )</label>
 				<input type="checkbox" class="w-100 mb-2 col-2" name="post-docs" placeholder="post-docs*" id="post_docs">
 			</div>
+		</div>
+
+		<div class="col-12 mb-2">
+			<h3>Policy Summary</h3>
+		</div>
+
+		<!-- summary table -->
+		<div class="col-12 summary">
+			<table id="summary-table" class="mt-0">
+				<thead>
+					<tr>
+						<th class="highlight"><span>Product</span></th>
+						<th class="highlight"><span>Number of Callouts</th>
+						<th class="highlight"><span>Roadside Assist</span></th>
+						<th class="highlight"><span>Nationwide Recovery</span></th>
+						<th class="highlight"><span>Home Assist</span></th>
+						<th class="highlight"><span>Alternative Travel</span></th>
+						<th class="highlight"><span>Overnight Accomodataion</span></th>
+						<th class="highlight"><span>Driver illnes or injury</span></th>
+						<th class="highlight"><span>Mis-Fuel</span></th>
+						<th class="highlight"><span>European Breakdown</span></th>
+						<th class="highlight"><span>Excess</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="bronze"><span></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="col-sm-6 duration">
+			<p class="w-100 mb-2">
+				<input type="text" name="duration" class="w-100 mb-2" id="duration" disabled placeholder="" value="12 Months">
+			</p>
+		</div>
+		<div class="col-sm-6 duration">
+			<p class="w-100 mb-2">
+				<input type="text" id="policy_cost_to_customer2" disabled placeholder="Policy Cost" value="Policy Cost:">
+			</p>
 		</div>
 		
 		<div class="col-12 my-2">
@@ -332,7 +332,8 @@ $_SESSION['START'] = 'start';
 	</div>
 	<!-- end Step 5 -->
 	
-</div><!-- end .form -->
+</div>
+<!-- end .form -->
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -354,6 +355,10 @@ $_SESSION['START'] = 'start';
 			let soap = document.getElementsByClassName('soap');
 			
 			let table = document.getElementById("policy_table");
+			let postDocs = document.getElementById("post_docs");
+
+
+
 			table.classList.remove('d-flex');
 			table.classList.add('d-none');
 
@@ -367,13 +372,7 @@ $_SESSION['START'] = 'start';
 				sendAjaxRequest(data, "checkUserName");
 			}, true)
 
-			// pdf.addEventListener('click', function(){
-			// 	let data = {
-			// 		"level" : level.value,
-			// 		"age"	: age.value
-			// 	}
-			// 	sendAjaxRequest(data, "generatePDF");
-			// })
+
 
 			level.addEventListener('change', function(){
 				let cost = getPolicyCost(level.value, age.value)
@@ -384,6 +383,14 @@ $_SESSION['START'] = 'start';
 				soapRequest();
 			})
 
+			postDocs.addEventListener('change', (event) => {
+				if (event.target.checked) {
+					let cost = ( parseFloat( costElement2.value.substr( 14 ) ) + 2.5)
+					costElement2.value = "Policy Cost: £" + cost;
+				} else {
+					costElement2.value = costElement.value;
+				}
+			})
 
 			/**
 			 * Functions
@@ -544,7 +551,7 @@ $_SESSION['START'] = 'start';
 				console.log("valid: ", valid)
 				console.log(errors);
 				// console.log(errors.length);
-				
+				valid = true;
 
 				if (valid) {
 					sendAjaxRequest(data, "my_form");

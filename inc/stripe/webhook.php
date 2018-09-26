@@ -7,7 +7,7 @@ function stripe_webhook()
 {
     \Stripe\Stripe::setApiKey(get_stripe_secret_key());
     // $endpoint_secret = get_stripe_endpoint_secret(); // whsec_BYeDq0dsQsUd5MiLqZTvFxHHX6sggyB7
-    $endpoint_secret = 'whsec_ZLhl1KYCtJDzg6jKamyIa8rcFtZitzjO';
+    $endpoint_secret = 'whsec_BYeDq0dsQsUd5MiLqZTvFxHHX6sggyB7';
 
     $payload = @file_get_contents("php://input");
     $sig_header = $_SERVER["HTTP_STRIPE_SIGNATURE"];
@@ -121,6 +121,7 @@ function notify_admin_of_documents_by_post($customer, $event)
     $user = get_user_by_email($customer['email']);
     $send = get_user_meta($user->ID, 'post_documents', true);
 
+    // echo '<pre>'; var_dump(print_r($customer)); echo '</pre>';
     // echo '<pre>'; var_dump(print_r($send)); echo '</pre>';
 
     if ( $send ) {
@@ -138,6 +139,27 @@ function notify_admin_of_documents_by_post($customer, $event)
 
         $attachments = array( WP_CONTENT_DIR . '/themes/intimation-pro/inc/mpdf/pdfs/' . $customer['policy_number'] . '.pdf' );
         wp_mail( $to, $subject, $body, $headers, $attachments );
+
+        // invoice the customer £2.50
+        charge_the_postage($user->ID);
+    }
+}
+
+function charge_the_postage( $userID )
+{
+    Stripe\Stripe::setApiKey( get_stripe_secret_key() );
+
+    try {
+        \Stripe\Charge::create(array(
+			"amount" => 250,
+			"currency" => "gbp",
+			"customer" => get_field('customer_id', 'user_' . $userID),
+			"description" => "Charge for Postage of Documents"
+		));
+    }
+
+    catch ( Exception $e ) {
+
     }
 }
 

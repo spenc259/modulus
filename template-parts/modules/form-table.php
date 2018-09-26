@@ -279,9 +279,9 @@
             <td class="highlight2"><span>£51.99</span></span></td>
         </tr>
     </table>
-</div>
-
-<div class="policy-links d-flex">
-    <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_Contract_of_Insurance-Road_Rescue_16-7-18.pdf'); ?>">Customer Wording</a>
+    <div class="policy-links d-flex">
+    <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_Contract_of_Insurnce-Road_Rescue_16-7-18.pdff'); ?>">Customer Wording</a>
     <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_IPID-Final_Branded.pdf'); ?>">IPID</a>
 </div>
+</div>
+

@@ -16,7 +16,7 @@ if ( is_user_logged_in() ){
                         $documents = get_field('documents', 'user_' . $userid);
                         echo '<a href="' . site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/') . $documents . '">' . $documents . '</a><br/>';
                     ?>
-                        <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_Contract_of_Insurance-Road_Rescue_16-7-18.pdf'); ?>">Customer Wording</a><br/>
+                        <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_Contract_of_Insurnce-Road_Rescue_16-7-18.pdf'); ?>">Customer Wording</a><br/>
                         <a href="<?php echo site_url('/wp-content/themes/intimation-pro/inc/mpdf/pdfs/PING_IPID-Final_Branded.pdf'); ?>">IPID</a><br/>
                     <hr>
                     <a href="<?php echo wp_logout_url( site_url('login') ); ?>" class="logout">Logout</a>
