@@ -273,11 +273,19 @@ $_SESSION['START'] = 'start';
 		</div>
 		
 		<div class="col-sm-6 duration">
+			<h5>Policy Duration</h5>
 			<p class="w-100 mb-2">
 				<input type="text" name="duration" class="w-100 mb-2" id="duration" disabled placeholder="" value="12 Months">
 			</p>
 		</div>
+
+		<div class="col-sm-6 policy_start_date2">
+			<h5>Policy Start Date</h5>
+			<input type="date" class="w-100 mb-2" name="policy_start_date2" disabled placeholder="policy_start_date*" id="policy_start_date2">
+		</div>
+
 		<div class="col-sm-6 duration">
+			<h5>Policy Cost</h5>
 			<p class="w-100 mb-2">
 				<input type="text" id="policy_cost_to_customer2" disabled placeholder="Policy Cost" value="Policy Cost:">
 			</p>
@@ -350,7 +358,8 @@ $_SESSION['START'] = 'start';
 			let costElement = document.getElementById("policy_cost_to_customer");
 			let costElement2 = document.getElementById("policy_cost_to_customer2");
 			let finalPolicy = document.getElementById("final_policy");
-			// let pdf = document.getElementById("generate_pdf");
+			let policyStartDate = document.getElementById("policy_start_date");
+			let policyStartDate2 = document.getElementById("policy_start_date2");
 			let username = document.getElementById("username");
 			let soap = document.getElementsByClassName('soap');
 			
@@ -390,6 +399,10 @@ $_SESSION['START'] = 'start';
 				} else {
 					costElement2.value = costElement.value;
 				}
+			})
+
+			policyStartDate.addEventListener('change', () => {
+				policyStartDate2.value = policyStartDate.value
 			})
 
 			/**
