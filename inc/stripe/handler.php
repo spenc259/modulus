@@ -29,7 +29,7 @@ function test_handle_new_signup()
 
 		$user_data = array(
 			'user_login' => $username,
-			'user_pass' => '',
+			// 'user_pass' => $_POST['password'],
 			'user_email' => $_POST['email'],
 			'first_name' => $_POST['forename'],
 			'last_name' => $_POST['surname']

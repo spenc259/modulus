@@ -9,6 +9,13 @@ if ( is_user_logged_in() ){
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
+                <h3>Your Details</h3>
+                <p><?php echo get_field('forname', 'user_' . $userid) . get_field('surname', 'user_' . $userid); ?></p>
+                <address>
+                    <?php echo get_field('address', 'user_' . $userid ); ?><br>
+                    <p><?php echo get_field('postcode', 'user_' . $userid); ?></p>
+                </address>
+                <p><?php echo get_field('telephone', 'user_' . $userid); ?></p>
                 <h3>My Documents</h3>
                 <div class="documents">
                     <p>Please click on the documents below to download:</p>

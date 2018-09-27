@@ -42,11 +42,7 @@ function generatePDF( $customer_id = '' )
 
 function get_customer( $customer_id )
 {
-    $customer_id = 'cus_Dfvl5jfeQrK2Nx';
-
     // $customer_id = ( $customer_id == '' ) ? $customer_id = 'NONE' : $customer_id;
-
-    // var_dump($customer_id);
 
     $args = array('meta_key' => 'customer_id', 'meta_value' => $customer_id, 'meta_compare' => '='); // cus_DYobFSqUVuGyyd
     $users = get_users( $args );
