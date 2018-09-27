@@ -9,8 +9,8 @@
 		<footer id="site-footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-4 mr-auto">
-						<img src="" alt="Footer Logo" srcset="">
+					<div class="col-5 pl-0">
+						<img src="<?php echo site_url('/wp-content/themes/intimation-pro/assets/img/footer-logo.png'); ?>" alt="Footer Logo" srcset="" class="footer-logo">
 						<?php 
 							do_action('footer-menu');
 							$contact_info = get_field('contact_info', 'option');
@@ -29,31 +29,31 @@
 						</div>
 					</div>
 					<div class="col-4">
-						<h5 class="uppercase secondary">Get in touch with Maxim</h5>
-						<h5 class="uppercase">Leasing Team</h5>
-						<?php 
-							$team_args = array(
-								'post_type' => 'team_member'
-							);
+						<h6 class="uppercase secondary mt-5 mb-3">Get in touch with Maxim</h6>
+						<h6 class="uppercase mb-4">Leasing Team</h6>
+					<?php 
+						$team_args = array(
+							'post_type' => 'team_member'
+						);
 
-							$team_members = get_posts($team_args);
+						$team_members = get_posts($team_args);
 
-							foreach ($team_members as $team_member) {
-								echo "<div class='row'>" . 
-										"<div class='col-auto'><img src='" . site_url('wp-content/uploads/2018/09/team-icon.png') . "' /></div>" . 
-										"<div class='col-auto'>" .
-											"<div class='row'>" . 
-												"<div class='col-auto'>". $team_member->post_title . '</div>' . 
-												"<div class='col-auto'>". get_field('text', $team_member->ID) . '</div>' . 
-											"</div>" . 
-										"</div>" . 
-									"</div>";
-							}
-						?>
+						foreach ($team_members as $team_member) : ?>
+							<div class="row">
+								<div class="col-2">
+									<img src='<?php echo site_url('wp-content/uploads/2018/09/team-icon.png'); ?>' alt="team-icon" />
+								</div>
+								<div class="col-10 pl-0">
+									<strong><?php echo $team_member->post_title; ?></strong><br>
+									<?php echo get_field('contact_number', $team_member->ID); ?>
+								</div>
+							</div><?php 
+						endforeach; 
+					?>
 					</div>
-					<div class="col-4">
-						<img src="<?php echo site_url('wp-content/uploads/2018/09/testimonial-icon.png'); ?>" />
-						<h5 class="uppercase">What our clients say</h5>
+					<div class="col-3 pr-0">
+						<img src="<?php echo site_url('wp-content/uploads/2018/09/testimonial-icon.png'); ?>" class="clients-icon"/>
+						<h6 class="uppercase mt-3 mb-4">What our clients say</h6>
 						<?php 
 							$testimonials_args = array(
 								'post_type' => 'testimonial'
@@ -61,18 +61,18 @@
 
 							$testimonials = get_posts($testimonials_args);
 
-							foreach ($testimonials as $testimonial) {
-								echo "<div class='row'>" . 
-										"<div class='col-auto'><img src='" . site_url('wp-content/uploads/2018/09/team-icon.png') . "' /></div>" . 
-										"<div class='col-auto'>" .
-											"<div class='row'>" . 
-												"<div class='col-auto'>". $testimonial->post_title . '</div>' . 
-												"<div class='col-auto'>". get_field('text', $testimonial->ID) . '</div>' . 
-											"</div>" . 
-										"</div>" . 
-									"</div>";
-							}
-						?>
+							foreach ($testimonials as $testimonial) : ?>
+								<div class="row">
+									<div class="col">
+										<p><?php echo '"' . $testimonial->post_content . '"'; ?></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<p class="secondary"><?php echo str_replace(" - ", "<br>", $testimonial->post_title); ?></p>
+									</div>
+								</div>
+							<?php endforeach; ?>
 					</div>
 				</div>
 			</div>

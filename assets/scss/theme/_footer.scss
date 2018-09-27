@@ -13,7 +13,7 @@ footer {
 }
 
 #site-footer {
-	background: black;
+	background: #363636;
 	color: white;
 
 	font-size: 0.9rem;
@@ -34,6 +34,7 @@ footer {
 
 				a {
 					color: $secondary;
+					font-size: 12px;
 				}
 			}
 		}
@@ -51,5 +52,17 @@ footer {
 	.copy {
 		color: $secondary;
 		margin: 1rem 0;
+	}
+
+	h6 {
+		line-height: 0.8;
+	}
+
+	.clients-icon {
+		margin-top: 0.8rem;
+	}
+
+	.footer-logo {
+		margin-top: 1.1rem;
 	}
 }
