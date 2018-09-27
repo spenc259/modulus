@@ -247,8 +247,9 @@ table {
 
 .policy-links {
 	justify-content: space-evenly;
-	padding-bottom: 2rem;
+	padding: 2rem;
 	font-size: 1.2rem;
+	width: 100%;
 
 	a {
 		color: $secondary;

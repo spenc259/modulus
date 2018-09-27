@@ -10,7 +10,7 @@ if ( is_user_logged_in() ){
         <div class="row justify-content-center">
             <div class="col">
                 <h3>Your Details</h3>
-                <p><?php echo get_field('forname', 'user_' . $userid) . get_field('surname', 'user_' . $userid); ?></p>
+                <p><?php echo get_field('forname', 'user_' . $userid) . ' ' . get_field('surname', 'user_' . $userid); ?></p>
                 <address>
                     <?php echo get_field('address', 'user_' . $userid ); ?><br>
                     <p><?php echo get_field('postcode', 'user_' . $userid); ?></p>
