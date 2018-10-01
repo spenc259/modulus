@@ -3735,8 +3735,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 body {
   font-family: 'Open Sans', sans-serif !important; }
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase; }
 /* Utilities */
 .text-centre {
   text-align: center; }
@@ -3758,6 +3756,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .grid > div {
   flex: 1 1 200px; }
+
+.uppercase {
+  text-transform: uppercase; }
 /* Theme */
 body {
   background: #fff;
@@ -3989,3 +3990,11 @@ footer {
   color: #fff;
   padding: 1rem;
   margin-bottom: 1rem; }
+  .events_slider .event {
+    position: relative; }
+  .events_slider .info {
+    position: absolute;
+    top: 40%;
+    padding: 1rem;
+    background: rgba(223, 190, 47, 0.9);
+    color: black; }

@@ -22,19 +22,19 @@ $term = get_term_by('term_id', $module['posts'][0], 'category');
     <div class="<?php echo $term->name; ?>">
         <div class="row">
             <div class="col-auto"><img src="<?php echo $module['icon']['url']; ?>" alt="" /></div>
-            <div class="col-auto"><h3><?php echo $module['module_heading']; ?></h3></div>
+            <div class="col-auto pl-0"><h3><?php echo $module['module_heading']; ?></h3></div>
         </div>
         <div class="row">
             <?php foreach ($posts as $post) : ?>
                 <div class="col-6">
                     <div class="row">
                         <div class="col">
-                            <img src="" alt="1st Post" />
+                            <?php echo get_the_post_thumbnail($post->ID); ?>
                         </div>
                         <div class="col">
-                            <h5>heading</h5>
-                            <p>post content</p>
-                            <a class="uppercase" href="">Read More...</a>
+                            <h5><?php echo substr(strip_shortcodes(strip_tags($post->post_title)), 0, 24) . '...'; ?></h5>
+                            <p><?php echo substr( strip_shortcodes( strip_tags( $post->post_content ) ), 0, 25 ) . '...'; ?></p>
+                            <a class="uppercase secondary" href="<?php echo site_url($post->post_name); ?>">Read More...</a>
                         </div>
                     </div>
                 </div>
