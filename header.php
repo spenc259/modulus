@@ -13,8 +13,6 @@
 	<?php endif; ?>
 
 	<?php wp_head(); ?>
-
-	<?php scss_compile_check(); ?>
 </head>
 
 <body <?php body_class(); ?>>

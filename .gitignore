@@ -1,7 +1,5 @@
-/assets/css/
-/assets/img/
+/assets/*
 todo.txt
 .DS_Store
-/assets/.DS_Store
-/assets/scss/.DS_Store
-/inc/.DS_Store
+*/.DS_Store
+node_modules

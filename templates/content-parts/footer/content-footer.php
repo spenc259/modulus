@@ -78,7 +78,7 @@
 			</div>
 		</footer>
 
-		<link href="<?php echo get_template_directory_uri() . '/assets/css/main.css'; ?>" rel="stylesheet">
+		<link href="<?php //echo get_template_directory_uri() . '/assets/css/main.css'; ?>" rel="stylesheet">
 
 		<?php wp_footer(); ?>	
 		<?php echo ($ga = get_option('options_google_analytics_script')) ? $ga : ''; ?>
