@@ -1,8 +1,13 @@
 body {
 	background: $primary;
-	font-family: "Arial", sans-serif;
-	color: darken($primary, 80%);
+	font-family: $font;
+	font-size: $base;
+	color: $bg;
 	margin: 0;
+}
+
+a {
+	color: $link;
 }
 
 button {

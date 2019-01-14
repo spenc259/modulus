@@ -16,10 +16,10 @@ add_action('front-page', 'sections');
  */
 function logo()
 {
-	$logo = wp_get_attachment_image( get_option('options_branding_logo_image') );
+	$logo = get_option('options_branding_logo_image');
 	$home = site_url();
 
-	include( locate_template( 'templates/content-parts/home/content-branding.php', false, false ) ); 
+	include( locate_template( 'templates/content-parts/home/content-branding.php', false, false ) );
 }
 add_action('header_left', 'logo');
 

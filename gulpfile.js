@@ -24,7 +24,7 @@ gulp.task('sass', function() {
 gulp.task('browserSync', function() {
 	browserSync.init({
 		files: '**/*',
-		proxy: 'wordpress.test/maxim'
+		proxy: 'localhost/gmvaleting/'
 	});
 });
 

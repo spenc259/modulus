@@ -20,3 +20,10 @@ import Glide from '@glidejs/glide';
 // eventsGlide.mount();
 
 myModule();
+
+// import Slider from './slider'
+
+// ReactDOM.render(
+//     <Slider />,
+//     document.getElementById('slider')
+// )

@@ -1,47 +1,5 @@
 header {
-	padding: 2rem;
-	background: black;
+	background: $bg;
 	color: white;
-
-	a {
-		color: blue;
-		font-size: 20px;
-	}
-
-	button {
-		background: transparent;
-		color: $secondary;
-		position: relative;
-		padding: 0;
-
-		&:before {
-			content: '';
-			position: absolute;
-			left: -50px;
-			background: url('/core/buy_now_icon.png');
-			height: 44px;
-			width: 44px;
-			top: -12px;
-		}
-	}
-}
-
-.hero {
-	.img-logo img,
-	img {
-		width: 100%;
-	}
-}
-
-.cta_banner {
-	background: black;
-	color: $primary;
-	text-align: center;
-	margin: 1rem auto;
-	padding: 3rem 2rem 3rem;
-
-	p {
-		max-width: 66%;
-		margin: auto;
-	}
+	padding: $padding;
 }

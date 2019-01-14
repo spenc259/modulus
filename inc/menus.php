@@ -32,7 +32,7 @@ function primary_nav()
 	<?php
 
 }
-add_action('header_middle', 'primary_nav');
+add_action('header_right', 'primary_nav');
 
 function footer_nav()
 {

@@ -2,67 +2,15 @@
     Footer
 */
 
-footer {
-	// background: rgb(22, 6, 22);
-
+footer#site-footer {
+	background: $secondary;
+	color: $bg;
 	padding: $padding;
 
-	.contact {
-		color: $white;
-	}
+	font-size: 0.7rem;
 }
 
-#site-footer {
-	background: #363636;
-	color: white;
-
-	font-size: 0.9rem;
-
-	nav {
-		ul {
-			margin: 1rem 0;
-			padding: 0;
-
-			display: flex;
-
-			list-style: none;
-
-			li {
-				&:nth-of-type(1) a {
-					padding-left: 0;
-				}
-
-				a {
-					color: $secondary;
-					font-size: 12px;
-				}
-			}
-		}
-	}
-	a {
-		padding: 0 1rem;
-		color: white;
-	}
-
-	.tel,
-	.email {
-		font-weight: 600;
-	}
-
-	.copy {
-		color: $secondary;
-		margin: 1rem 0;
-	}
-
-	h6 {
-		line-height: 0.8;
-	}
-
-	.clients-icon {
-		margin-top: 0.8rem;
-	}
-
-	.footer-logo {
-		margin-top: 1.1rem;
-	}
+.sub_footer {
+	background: $bg;
+	padding: $padding;
 }

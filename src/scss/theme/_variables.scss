@@ -1,10 +1,11 @@
-$primary: #ffffff;
-$secondary: #dfbe2f;
+$primary: #1A77B9;
+$secondary: #3a3a3c;
+$bg: white;
 $padding: 2rem;
 
-body {
-	font-family: 'Open Sans', sans-serif !important;
-}
+$link: $secondary;
+
+$font: 'Hind', sans-serif;
 
 $border: 1px solid $secondary;
 $border-radius: 5px;

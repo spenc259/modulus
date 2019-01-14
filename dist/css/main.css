@@ -3695,19 +3695,16 @@ a.text-dark:hover, a.text-dark:focus {
     direction: rtl; }
 
 /* Variables */
-body {
-  font-family: 'Open Sans', sans-serif !important; }
-
 /* Typography */
 /* Utilities */
 .text-centre {
   text-align: center; }
 
 .green {
-  color: #dfbe2f; }
+  color: #3a3a3c; }
 
 .secondary {
-  color: #dfbe2f; }
+  color: #3a3a3c; }
 
 .large {
   font-size: 2rem;
@@ -3726,13 +3723,17 @@ body {
 
 /* Theme */
 body {
-  background: #ffffff;
-  font-family: "Arial", sans-serif;
-  color: #333333;
+  background: #1A77B9;
+  font-family: "Hind", sans-serif;
+  font-size: 16px;
+  color: white;
   margin: 0; }
 
+a {
+  color: #3a3a3c; }
+
 button {
-  background: #dfbe2f;
+  background: #3a3a3c;
   border: none;
   padding: 2rem 4rem;
   color: #fff;
@@ -3751,45 +3752,15 @@ button {
     text-transform: uppercase; }
     .primary-menu li a {
       text-decoration: none;
-      color: #ffffff; }
+      color: #1A77B9; }
 
 header {
-  padding: 2rem;
-  background: black;
-  color: white; }
-  header a {
-    color: blue;
-    font-size: 20px; }
-  header button {
-    background: transparent;
-    color: #dfbe2f;
-    position: relative;
-    padding: 0; }
-    header button:before {
-      content: '';
-      position: absolute;
-      left: -50px;
-      background: url("/core/buy_now_icon.png");
-      height: 44px;
-      width: 44px;
-      top: -12px; }
-
-.hero .img-logo img,
-.hero img {
-  width: 100%; }
-
-.cta_banner {
-  background: black;
-  color: #ffffff;
-  text-align: center;
-  margin: 1rem auto;
-  padding: 3rem 2rem 3rem; }
-  .cta_banner p {
-    max-width: 66%;
-    margin: auto; }
+  background: white;
+  color: white;
+  padding: 2rem; }
 
 .hero {
-  background: #dfbe2f; }
+  background: #3a3a3c; }
   .hero h2 {
     color: #fff;
     font-weight: 700;
@@ -3800,40 +3771,15 @@ header {
 /* 
     Footer
 */
-footer {
-  padding: 2rem; }
-  footer .contact {
-    color: #fff; }
-
-#site-footer {
-  background: #363636;
+footer#site-footer {
+  background: #3a3a3c;
   color: white;
-  font-size: 0.9rem; }
-  #site-footer nav ul {
-    margin: 1rem 0;
-    padding: 0;
-    display: flex;
-    list-style: none; }
-    #site-footer nav ul li:nth-of-type(1) a {
-      padding-left: 0; }
-    #site-footer nav ul li a {
-      color: #dfbe2f;
-      font-size: 12px; }
-  #site-footer a {
-    padding: 0 1rem;
-    color: white; }
-  #site-footer .tel,
-  #site-footer .email {
-    font-weight: 600; }
-  #site-footer .copy {
-    color: #dfbe2f;
-    margin: 1rem 0; }
-  #site-footer h6 {
-    line-height: 0.8; }
-  #site-footer .clients-icon {
-    margin-top: 0.8rem; }
-  #site-footer .footer-logo {
-    margin-top: 1.1rem; }
+  padding: 2rem;
+  font-size: 0.7rem; }
+
+.sub_footer {
+  background: white;
+  padding: 2rem; }
 
 .spaces-grid {
   display: grid;
@@ -3923,13 +3869,13 @@ footer {
   padding: 1rem; }
 
 .twitter-feed {
-  background: #dfbe2f;
+  background: #3a3a3c;
   margin-bottom: 1rem; }
 
 /* blocks */
 .events_slider {
   background: #333333;
-  color: #ffffff;
+  color: #1A77B9;
   padding: 1rem;
   margin-bottom: 1rem;
   position: relative; }

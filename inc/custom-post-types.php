@@ -4,44 +4,16 @@ $cpts = array(
 	'slides' => array(
 		'singular' => 'slide',
 		'display' => 'Slide',
-		'icon'		=> 'dashicons-format-gallery'
+		'icon'		=> 'dashicons-format-gallery',
+		'description' => 'slides'
 	),
-	'spaces' => array(
-		'singular' => 'space',
-		'display' => 'Space',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my spaces description'
+	'prices' => array(
+		'singular' => 'price',
+		'display' => 'price',
+		'icon'		=> 'dashicons-format-gallery',
+		'description' => 'prices'
 	),
-	'tenants' => array(
-		'singular' => 'tenant',
-		'display' => 'Tenant',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my tenants description'
-	),
-	'events' => array(
-		'singular' => 'event',
-		'display' => 'Event',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my events description'
-	),
-	'team_members' => array(
-		'singular' => 'team_member',
-		'display' => 'Team Member',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my Team Members description'
-	),
-	'testimonials' => array(
-		'singular' => 'testimonial',
-		'display' => 'Testimonial',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my testimonials description'
-	),
-	'locations' => array(
-		'singular' => 'location',
-		'display' => 'Location',
-		'icon' => 'dashicons-building',
-		'description' => 'this is my locations description'
-	),
+	
 );
 
 /**
