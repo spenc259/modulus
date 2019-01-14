@@ -1,0 +1,33 @@
+.cta {
+	background: white;
+
+	h4 {
+		color: $secondary;
+		text-transform: initial;
+		font-style: italic;
+	}
+
+	p {
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	button {
+		background: #29235c;
+		font-weight: 600;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 28px;
+			background: url('/core/buy_now_icon.png') no-repeat;
+			background-size: auto auto;
+			height: 44px;
+			width: 30px;
+			top: 26px;
+			bottom: 0;
+			background-size: contain;
+			filter: brightness(0) invert(1);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+body {
+	background: $primary;
+	font-family: "Arial", sans-serif;
+	color: darken($primary, 80%);
+	margin: 0;
+}
+
+button {
+	background: $secondary;
+	border: none;
+	padding: $padding ($padding*2);
+	color: #fff;
+	cursor: pointer;
+
+	&.small {
+		padding: ($padding/2) $padding;
+		border-radius: 5px;
+	}
+}

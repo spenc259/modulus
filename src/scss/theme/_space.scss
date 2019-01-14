@@ -1,0 +1,10 @@
+.spaces-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(33.33333%, 1fr));
+
+	.grid-item {
+		margin: 1rem;
+		text-align: center;
+		padding: 1rem;
+	}
+}

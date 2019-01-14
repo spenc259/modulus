@@ -1,0 +1,65 @@
+.events_slider {
+	background: #333333;
+	color: $primary;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	position: relative;
+
+	.event {
+		position: relative;
+		padding: 0 2.5rem;
+	}
+
+	.info {
+		position: absolute;
+		bottom: 0;
+		padding: 1rem;
+		background: rgba(223, 190, 47, 0.9);
+		color: #333333;
+		width: 80%;
+		font-size: 80%;
+	}
+
+	img {
+		max-height: 134px;
+		width: 100%;
+	}
+
+	.title {
+		color: white;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px 0 0;
+	}
+
+	.glide__track {
+		padding: 0rem 0;
+		position: relative;
+	}
+
+	.glide__slides {
+		margin-bottom: 0;
+	}
+
+	.glide__slide {
+		z-index: 1;
+		transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0s;
+	}
+
+	div[data-glide-el="controls"] {
+		position: absolute;
+		width: 91%;
+		bottom: 16px;
+
+		button {
+			padding: 3.44rem 1rem;
+			color: #666;
+			background: #333333;
+
+			&.next {
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.carousel {
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.carousel-bg {
+	background: #333333;
+
+	img {
+		max-height: 134px;
+	}
+
+	.title {
+		color: white;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px 0 0;
+	}
+
+	.glide__track {
+		padding: 0rem 0;
+		margin: -36px 0;
+	}
+
+	.glide__slides {
+		margin-bottom: 0;
+	}
+
+	.glide__slide {
+		filter: blur(5px);
+		z-index: 1;
+		transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0s;
+		margin: 51px 0;
+
+		&--active {
+			filter: blur(0);
+			z-index: 2;
+			box-shadow: 13px 0px 20px 10px black;
+		}
+	}
+
+	div[data-glide-el="controls"] {
+		position: absolute;
+		width: 100%;
+		top: 0;
+
+		button {
+			padding: 6rem 1rem;
+			color: #666;
+			background: #333333;
+
+			&.next {
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+}
