@@ -6839,7 +6839,7 @@ header {
 
 #home-header {
   background: url('../img/black_texture_with_logo.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
   padding: 0;
@@ -6851,8 +6851,8 @@ header {
     position: fixed;
     top: 36%; }
   #home-header.shrink {
-    padding-top: 85vh;
-    height: 90vh; }
+    padding-top: 95.5vh;
+    height: 100vh; }
   #home-header #home-logo {
     height: 126px; }
 
@@ -7047,15 +7047,26 @@ footer {
 
 .content-editor.taste.round.black_texture_bg {
   background-position: 10%; }
+  .content-editor.taste.round.black_texture_bg h3 {
+    font-size: 2.999rem; }
 
 .content-editor.consistancy.round.black_texture_bg {
   background-position: 50%; }
+  .content-editor.consistancy.round.black_texture_bg h3 {
+    font-size: 2.999rem; }
 
 .content-editor.range.round.black_texture_bg {
   background-position: 90%; }
+  .content-editor.range.round.black_texture_bg h3 {
+    font-size: 2.999rem; }
 
 .soup_seller {
   padding: 2rem 0; }
+  .soup_seller h3 {
+    font-size: 89px; }
+
+.row.justify-content-center.about_us {
+  margin-bottom: 8rem; }
 
 .contact img {
   width: auto; }

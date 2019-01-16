@@ -88,13 +88,15 @@ function waypoint(el) {
 
 	checkWayPoint(distanceToScroll);
 
+	var url = location.origin == 'https://wordpress.test' ? location.origin + '/redemption' : location.origin;
+
 	if (checkWayPoint(distanceToScroll)) {
 		if (header) {
 			element.className = 'shrink';
 			header.className = 'shrink';
 			element.setAttribute(
 				'src',
-				location.origin + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
+				url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
 			);
 		}
 	} else {
@@ -103,7 +105,7 @@ function waypoint(el) {
 			header.className = 'large';
 			element.setAttribute(
 				'src',
-				location.origin + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
+				url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
 			);
 		}
 	}

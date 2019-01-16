@@ -25,19 +25,35 @@
 	}
 }
 
-
 .content-editor.taste.round.black_texture_bg {
 	background-position: 10%;
+	h3 {
+		font-size: 2.999rem;
+	}
 }
 
 .content-editor.consistancy.round.black_texture_bg {
 	background-position: 50%;
+	h3 {
+		font-size: 2.999rem;
+	}
 }
 
 .content-editor.range.round.black_texture_bg {
 	background-position: 90%;
+	h3 {
+		font-size: 2.999rem;
+	}
 }
 
 .soup_seller {
 	padding: 2rem 0;
+
+	h3 {
+		font-size: 89px;
+	}
+}
+
+.row.justify-content-center.about_us {
+	margin-bottom: 8rem;
 }
