@@ -1,0 +1,25 @@
+nav {
+    width: 100%;
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        background: white;
+        flex: 1;
+        justify-content: center;
+    }
+
+    li {
+        padding: 0.8rem;
+
+        &.current-menu-item a {
+            color: #bd1e2f;
+        }
+    }
+
+    a {
+        color: #000;
+        font-weight: bold;
+    }
+}

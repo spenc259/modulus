@@ -39,6 +39,34 @@ try {
 						$(this).text('READ LESS <');
 					}
 				});
+
+				/**
+				 * Slick Slider
+				 */
+				if (!$('.slider').hasClass('.slick-initialized')) {
+					$('.slider').slick({
+						infinite: true,
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						speed: 1000,
+						centerMode: true,
+						centerPadding: '0',
+						prevArrow:
+							'<button class="slick-prev slick-arrow" aria-label="Prev" type="button" style="display: inline-block;"><i class="fa fa-chevron-left red" aria-hidden="true"></i></button>',
+						nextArrow:
+							'<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;"><i class="fa fa-chevron-right red" aria-hidden="true"></i></button>'
+						// responsive: [
+						// 	{
+						// 		breakpoint: 991,
+						// 		settings: {
+						// 			arrows: false,
+						// 			centerMode: false,
+						// 			slidesToShow: 1
+						// 		}
+						// 	}
+						// ]
+					});
+				}
 			});
 		},
 		supportsPassive ? { passive: true } : false
@@ -49,34 +77,34 @@ try {
  * Waypoints
  */
 function waypoint(el) {
-	var element = document.getElementById(el),
-		windowHeight = window.innerHeight,
-		elementDistance = element.getBoundingClientRect().top;
-	elementBottom = element.getBoundingClientRect().bottom;
+	var element = document.getElementById(el);
 
-	if (elementDistance !== 0) {
-		distanceToScroll = elementDistance - windowHeight;
-	} else {
-		distanceToScroll = elementBottom;
+	if (element) {
+		var elementBottom = element.getBoundingClientRect().bottom,
+			header = document.getElementById('home-header'),
+			distanceToScroll = elementBottom;
 	}
 
-	// console.log(windowHeight);
-	// console.log(elementDistance);
-	console.log(distanceToScroll);
 	checkWayPoint(distanceToScroll);
 
-	var logo = document.getElementById('logo');
-
 	if (checkWayPoint(distanceToScroll)) {
-		//console.log('waypoint shrink menu');
-		element.className = 'shrink';
-		// logo.setAttribute('class', 'shrink');
-		logo.className = 'col-6 col-sm-2 logo attached-left shrink';
+		if (header) {
+			element.className = 'shrink';
+			header.className = 'shrink';
+			element.setAttribute(
+				'src',
+				'https://wordpress.test/redemption/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
+			);
+		}
 	} else {
-		//console.log('enlarge menu');
-		element.className = 'enlarge';
-		// logo.setAttribute('class', 'enlarge');
-		logo.className = 'col-6 col-sm-2 logo attached-left enlarge';
+		if (header) {
+			element.className = 'large';
+			header.className = 'large';
+			element.setAttribute(
+				'src',
+				'https://wordpress.test/redemption/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
+			);
+		}
 	}
 }
 
@@ -89,20 +117,11 @@ function waypoint(el) {
  * may be better to return the state of the waypoint ie top, bottom etc
  */
 function checkWayPoint(distanceToScroll) {
-	var waypoint, count;
-	if (count >= 300) {
-		waypoint = true;
-	}
-	// console.log(window.scrollY);
+	let waypoint = false;
+
 	if (window.scrollY < distanceToScroll) {
-		// console.log('waypoint NOT reached');
-		count++;
-		waypoint = false;
 		return false;
-	} else if (window.scrollY === 0) {
-		// console.log('TOP Reached');
-	} else if (window.scrollY > distanceToScroll) {
-		// console.log('waypoint reached');
+	} else if (window.scrollY >= distanceToScroll) {
 		waypoint = true;
 		return true;
 	}
@@ -128,17 +147,12 @@ function requestTick() {
 
 function update() {
 	ticking = false;
-	var currentScrollY = lastKnownScrollY;
-	var waypoints = [ 'site-header' ];
+
+	var waypoints = [ 'home-logo' ];
 	for (var index = 0; index < waypoints.length; index++) {
 		var element = waypoints[index];
-
 		waypoint(element);
 	}
 }
 
-console.log('main');
-// window.addEventListener('scroll', onScroll, false);
-// window.addEventListener('scroll', onScroll, supportsPassive ? { passive: true } : false);
-
-// Use our detect's results. passive applied if supported, capture will be false either way.
+window.addEventListener('scroll', onScroll, supportsPassive ? { passive: true } : false);

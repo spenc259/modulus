@@ -12,24 +12,13 @@ register_nav_menus(array(
  */
 function primary_nav()
 {
-	echo "<nav class='nav hidden-xs hidden-sm hidden-md primary'>";
-        wp_nav_menu( 
-			array(
-				'theme_location' => 'primary', 
-				'container' => false, 
-				'menu_class' => 'primary-menu',
-				'items_wrap'     => '<ul class="%2$s">%3$s<li class="search-menu-item"><i class="fa fa-search"></i></li></ul>'
-			)
-		);
-	echo "</nav>";
-
-	?>
-
-	<button type="button" class="burger d-none" data-toggle="collapse" data-target="#responsive-menu">
-		<span></span>
-	</button>
-	
-	<?php
-
+	wp_nav_menu( 
+		array(
+			'theme_location' => 'primary', 
+			'container' => false, 
+			'menu_class' => 'primary-menu',
+			'items_wrap'     => '<ul class="row %2$s">%3$s</ul>'
+		)
+	);
 }
-add_action('before_header', 'primary_nav');
+add_action('navigation', 'primary_nav');

@@ -1,9 +1,19 @@
 .content-editor,
 .icon_title_content {
-	// border: $border;
-	// border-radius: $border-radius;
-	// padding: $padding;
 	margin: 1rem auto;
+	padding: 2rem;
+
+	h1, h2 {
+		padding: 2rem;
+	}
+
+	h2 {
+		font-size: $h1;
+	}
+
+	p {
+		font-weight: 700;
+	}
 
 	a.read_more {
 		color: $secondary;

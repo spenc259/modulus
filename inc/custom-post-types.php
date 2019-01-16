@@ -1,16 +1,46 @@
 <?php
 
 $cpts = array(
-	'slides' => array(
-		'singular' => 'slide',
-		'display' => 'Slide',
+	'formats' => array(
+		'singular' => 'format',
+		'display' => 'format',
 		'icon'		=> 'dashicons-format-gallery'
 	),
-	'spaces' => array(
-		'singular' => 'space',
-		'display' => 'space',
+	'soups' => array(
+		'singular' => 'soup',
+		'display' => 'soup',
+		'icon' => get_stylesheet_directory_uri() . '/assets/img/icons/Icons1-01.png',
+		'description' => 'this is my soupss description'
+	),
+	'stews' => array(
+		'singular' => 'stew',
+		'display' => 'stew',
 		'icon' => 'dashicons-building',
-		'description' => 'this is my spaces description'
+		'description' => 'this is my stews description'
+	),
+	'toppers' => array(
+		'singular' => 'topper',
+		'display' => 'topper',
+		'icon' => 'dashicons-building',
+		'description' => 'this is my toppers description'
+	),
+	'chef-base-sauces' => array(
+		'singular' => 'chef-base-sauce',
+		'display' => 'chef base sauce',
+		'icon' => 'dashicons-building',
+		'description' => 'this is my chef base sauces description'
+	),
+	'dressings-chutneys' => array(
+		'singular' => 'dressings-chutney',
+		'display' => 'dressings-chutney',
+		'icon' => 'dashicons-building',
+		'description' => 'this is my dressings-chutneys description'
+	),
+	'wholesalers' => array(
+		'singular' => 'wholesaler',
+		'display' => 'wholesaler',
+		'icon' => 'dashicons-building',
+		'description' => 'this is my wholesalers description'
 	),
 );
 

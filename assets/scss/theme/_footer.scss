@@ -3,19 +3,32 @@
 */
 
 footer {
-	// background: rgb(22, 6, 22);
-
 	padding: $padding;
+	font-family: 'Noto Sans TC', sans-serif;
 
-	.contact {
-		color: $white;
+	font-size: 13px;
+	font-weight: 400;
+	
+	span {
+		margin-right: 1rem;
 	}
 }
 
 #site-footer {
-	background: $secondary;
+	background: url('../img/black_texture.jpg');
+	background-size: cover;
+	background-position: 50%;
+
+	color: white;
 	a {
 		padding: 0 1rem;
 		color: white;
+	}
+
+	hr {
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		border: 0;
+		border-top: 1px solid rgb(255, 255, 255);
 	}
 }

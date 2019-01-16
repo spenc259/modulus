@@ -5,14 +5,13 @@ function google_fonts_url() {
 
 	$font_families = array();
 
-	$font_families = ['Open+Sans:300,400,700'];
+	$font_families = ['Covered+By+Your+Grace', 'Merriweather:300,400,700', 'Noto+Sans+TC'];
 
 	$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' ),
+		'family' => implode( '|', $font_families )
 	);
 
 	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
-	return esc_url_raw( $fonts_url );
+	return $fonts_url;
 }

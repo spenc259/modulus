@@ -29,4 +29,4 @@ function hero()
 {
 	get_template_part( 'templates/content-parts/home/content', 'hero' );
 }
-add_action('after_header', 'hero');
+// add_action('after_header', 'hero');

@@ -1,7 +1,9 @@
+.heading.col-12.text-center {
+	padding: 4rem 0 1rem;
+}
+
 .heading {
-	border: $border;
-	border-radius: $border-radius;
-	padding: 8rem;
-	margin: 2rem 0;
-	text-align: center;
+	&.product {
+		padding: 4rem 0 2rem;
+	}
 }

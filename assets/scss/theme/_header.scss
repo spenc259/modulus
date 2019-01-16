@@ -1,7 +1,39 @@
+.landing-page {
+	position: relative;
+	height: 100vh;
+
+	#logo {
+		background: url("../img/Redemption-master-logo.png");
+		background-attachment: fixed;
+		height: 100vh;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}
+
+	.scroll-text {
+		position: fixed;
+		bottom: 100px;
+		color: white;
+		margin: auto;
+		width: 100%;
+		text-align: center;
+		left: 0;
+	}
+}
+
+.main-content {
+	position: relative;
+	z-index: 1;
+
+	header,
+	main {
+		background: $primary;
+	}
+}
+
 header {
 	padding: 2rem;
-	// background: blue;
-	color: white;
 
 	a {
 		color: blue;
@@ -28,6 +60,57 @@ header {
 	.hero {
 		.img-logo img {
 			width: 100%;
+		}
+	}
+}
+
+#home-header {
+	background: url('../img/black_texture_with_logo.jpg');
+	background-size: contain;
+	background-position: 50%;
+	background-attachment: fixed;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+
+	&.large {
+		height: 90vh;
+
+		img {
+			position: fixed;
+			top: 36%;
+		}
+	}
+
+	&.shrink {
+		padding-top: 85vh;
+		height: 90vh;
+	}
+
+	#home-logo {
+		height: 126px;
+	}
+}
+
+#site-header {
+	background: url('../img/black_texture_with_logo.jpg');
+	background-size: contain;
+	background-position: 50%;
+	background-attachment: fixed;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+
+	height: 30vh;
+	padding-top: 25.5vh;
+
+	#logo {
+		// height: 126px;
+		position: absolute;
+
+		&.full {
+			width: auto;
+			max-width: 100%;
 		}
 	}
 }

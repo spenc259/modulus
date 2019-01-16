@@ -1,24 +1,11 @@
 
-<section class='slider'>
-    <div class="owl-carousel owl-theme">
-    
-        <?php foreach ( $module['slider'] as $key => $slide ) : ?>
-
-            <div class="slide">
-                <?php $image_id = get_post_meta( $slide->ID, 'image', true ); ?>
-                <?php $caption = get_post_meta( $slide->ID, 'caption', true ); ?>
-                <?php echo get_the_attachment_link( $image_id, true ); ?>
-                <!--
-                    <div class="title">
-                        <?php // echo $slide->post_title; ?>
-                    </div>
-                -->
-                <div class="caption">
-                    <?php echo $caption; ?>
-                </div>
+<section class='col-12 slider'>
+    <?php foreach ( $module['slider'] as $key => $slide ) : ?>
+        <?php $image_id = get_the_post_thumbnail_url($slide->ID); ?>
+        <div class="slide">
+            <div class="slide-item" style="background-image: url('<?php echo $image_id; ?>');">
+                <div class="slide-inner"></div>
             </div>
-            
-        <?php endforeach; ?>
-
-    </div>
+        </div>
+    <?php endforeach; ?>
 </section>

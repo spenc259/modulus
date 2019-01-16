@@ -1,8 +1,30 @@
-body {
-	background: $primary;
-	font-family: "Arial", sans-serif;
-	color: darken($primary, 80%);
+html, body {
+	margin: 0;
+	padding: 0;
 }
+
+body {
+	font-family: 'Noto Sans TC', sans-serif;
+	color: darken($color, 80%);
+	font-weight: bold;
+	width: 100%;
+	z-index: 0;
+}
+
+main {
+	background: $primary;
+	padding-top: 114px;
+}
+
+
+.bucket {
+	img {
+		width: 100%;
+	}
+}
+
+
+
 
 button {
 	background: $secondary;

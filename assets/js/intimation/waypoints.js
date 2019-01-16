@@ -3,6 +3,17 @@
  * @version 0.1
  */
 
+var supportsPassive = false;
+try {
+	var opts = Object.defineProperty({}, 'passive', {
+		get: function() {
+			supportsPassive = true;
+		}
+	});
+	window.addEventListener('testPassive', null, opts);
+	window.removeEventListener('testPassive', null, opts);
+} catch (e) {}
+
 /*
 TODO: 
     - allow classes or distances to be set
@@ -15,14 +26,12 @@ function waypoint(el) {
 		windowHeight = window.innerHeight,
 		elementDistance = element.getBoundingClientRect().top,
 		distanceToScroll = elementDistance - windowHeight;
-	// console.log(windowHeight);
-	// console.log(elementDistance);
-	// console.log(distanceToScroll);
+
 	checkWayPoint(distanceToScroll);
 
 	if (checkWayPoint(distanceToScroll)) {
 		//lazyLoad(element);
-		// console.log('waypoint');
+		console.log('waypoint');
 	}
 }
 
@@ -41,14 +50,14 @@ function checkWayPoint(distanceToScroll) {
 	}
 	// console.log(window.scrollY);
 	if (window.scrollY < distanceToScroll) {
-		// console.log('waypoint NOT reached');
+		console.log('waypoint NOT reached');
 		count++;
 		waypoint = false;
 		return false;
 	} else if (window.scrollY === 0) {
-		// console.log('TOP Reached');
+		console.log('TOP Reached');
 	} else if (window.scrollY > distanceToScroll) {
-		// console.log('waypoint reached');
+		console.log('waypoint reached');
 		waypoint = true;
 		return true;
 	}

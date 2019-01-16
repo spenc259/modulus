@@ -5,7 +5,7 @@
  * @since 0.3.0
  */
 
-get_header(); ?>
+get_header(); echo "ARCHIVE"; ?>
 
 <div class="container <?php echo get_post_type(); ?>">
     <div class="row">

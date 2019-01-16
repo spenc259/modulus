@@ -1,14 +1,61 @@
-.carousel {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		text-align: center;
+.slick-slider {
+	.slick-track {
+		height: 480px;
 	}
 
-	.owl-height {
-		height: 300px;
+	.slide {
+		position: relative;
+		top: 50px;
+		transition: all 1s;
+		z-index: 10;
+
+		.slide-item {
+			position: relative;
+			transition: all 1s;
+			display: inline-block;
+			padding: 100px;
+			background-size: cover;
+			z-index: 10;
+
+			.slide-inner {
+				width: 180px;
+				height: 180px;
+			}
+		}
+
+		&.slick-center {
+			top: 0px;
+			z-index: 11;
+
+			.slide-item {
+				padding: 150px;
+				z-index: 11;
+			}
+		}
+	}
+
+	.slick-prev,
+	.slick-next {
+		position: absolute;
+		top: 50%;
+		font-size: 36px;
+		line-height: 36px;
+		display: block;
+		width: auto;
+		height: auto;
+		margin-top: -10px;
+		padding: 0;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		background: transparent;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.slick-next {
+		right: -25px;
 	}
 }

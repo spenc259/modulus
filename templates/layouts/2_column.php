@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container <?php echo $row['class']; ?>">
     <div class="row">
         <?php foreach ( $row['pick_a_module'] as $module ) : ?>
             <div class="col-sm-6">

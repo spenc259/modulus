@@ -22,6 +22,16 @@
 	<?php do_action('before_header'); ?>
 
 
-	<?php get_template_part( 'templates/content-parts/header/content', 'header' ); ?>
+	<?php 
+	
+	if ( is_home() ) {
+		get_template_part('templates/content-parts/header/content', 'home-header');
+	} else {
+		get_template_part('templates/content-parts/header/content', 'header');
+	}
+	
+	?>
 	
 	<?php do_action('after_header'); ?>
+
+	<?php get_template_part( 'templates/content-parts/nav/content', 'nav' ); ?>

@@ -1,5 +1,14 @@
-.bucket {
+.home .bucket {
 	justify-content: space-between;
+	background: url('../img/Caramel.png');
+	background-size: cover;
+	background-position: 0% 46%;
+	background-repeat: no-repeat;
+	padding: 4rem 0;
+
+	img {
+		width: 100%;
+	}
 }
 
 .icon_title_content {
@@ -14,4 +23,21 @@
 		color: lighten(black, 35%);
 		max-width: 79%;
 	}
+}
+
+
+.content-editor.taste.round.black_texture_bg {
+	background-position: 10%;
+}
+
+.content-editor.consistancy.round.black_texture_bg {
+	background-position: 50%;
+}
+
+.content-editor.range.round.black_texture_bg {
+	background-position: 90%;
+}
+
+.soup_seller {
+	padding: 2rem 0;
 }

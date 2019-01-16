@@ -1,5 +1,16 @@
 //* Lazy Load implementation *//
 
+var supportsPassive = false;
+try {
+	var opts = Object.defineProperty({}, 'passive', {
+		get: function() {
+			supportsPassive = true;
+		}
+	});
+	window.addEventListener('testPassive', null, opts);
+	window.removeEventListener('testPassive', null, opts);
+} catch (e) {}
+
 /*
 
 create an array of elements that need to be lazy loaded

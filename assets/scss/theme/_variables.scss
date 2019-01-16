@@ -1,9 +1,12 @@
-$primary: #ffffff;
+$primary: #f2f2f3;
 $secondary: #dfbe2f;
 $padding: 2rem;
 
+$family: 'Merriweather', sans-serif !important;
+$alt_family: 'Covered By Your Grace', cursive !important;
+
 body {
-	font-family: 'Open Sans', sans-serif !important;
+	font-family: $family;
 }
 
 $border: 1px solid $secondary;
@@ -22,11 +25,44 @@ $h6: 0.707rem;
 $small: 0.5rem;
 $tiny: 0.354rem;
 
+$color: #000000;
+
+
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	text-transform: uppercase;
+	font-family: $alt_family;;
+}
+
+h1 {
+	font-size: $h1;
+}
+
+
+h2 {
+	font-size: $h2;
+}
+
+
+h3 {
+	font-size: $h3;
+}
+
+
+h4 {
+	font-size: $h4;
+}
+
+
+h5 {
+	font-size: $h5;
+}
+
+
+h5 {
+	font-size: $h5;
 }
