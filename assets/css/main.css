@@ -6846,7 +6846,7 @@ header {
   display: flex;
   justify-content: center; }
   #home-header.large {
-    height: 90vh; }
+    height: 100vh; }
   #home-header.large img {
     position: fixed;
     top: 36%; }

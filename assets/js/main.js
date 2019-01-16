@@ -82,7 +82,8 @@ function waypoint(el) {
 	if (element) {
 		var elementBottom = element.getBoundingClientRect().bottom,
 			header = document.getElementById('home-header'),
-			distanceToScroll = elementBottom;
+			distanceToScroll = elementBottom + 110;
+		console.log(elementBottom);
 	}
 
 	checkWayPoint(distanceToScroll);
@@ -93,7 +94,7 @@ function waypoint(el) {
 			header.className = 'shrink';
 			element.setAttribute(
 				'src',
-				'https://wordpress.test/redemption/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
+				location.origin + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
 			);
 		}
 	} else {
@@ -102,7 +103,7 @@ function waypoint(el) {
 			header.className = 'large';
 			element.setAttribute(
 				'src',
-				'https://wordpress.test/redemption/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
+				location.origin + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
 			);
 		}
 	}

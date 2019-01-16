@@ -66,7 +66,7 @@ header {
 
 #home-header {
 	background: url('../img/black_texture_with_logo.jpg');
-	background-size: contain;
+	background-size: cover;
 	background-position: 50%;
 	background-attachment: fixed;
 	padding: 0;
@@ -74,7 +74,7 @@ header {
 	justify-content: center;
 
 	&.large {
-		height: 90vh;
+		height: 100vh;
 
 		img {
 			position: fixed;
@@ -83,8 +83,8 @@ header {
 	}
 
 	&.shrink {
-		padding-top: 85vh;
-		height: 90vh;
+		padding-top: 95.5vh;
+		height: 100vh;
 	}
 
 	#home-logo {
