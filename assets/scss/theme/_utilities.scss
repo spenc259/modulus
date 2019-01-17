@@ -43,11 +43,19 @@
 
 	img {
 		width: 100%;
+		height: auto;
+		max-width: 150px;
+		max-height: 150px;
 	}
 
 	&.alt {
 		padding: 2rem 2rem 2rem;
-		min-height: auto;
+		min-height: 350px;
+		min-width: 350px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
@@ -95,4 +103,8 @@
 
 .bg_right {
 	background-position: 90%;
+}
+
+.pb-large {
+	padding-bottom: 7rem;
 }

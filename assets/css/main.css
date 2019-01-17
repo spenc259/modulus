@@ -7105,7 +7105,12 @@ footer {
     width: 100%; }
   .soups .round.alt {
     padding: 2rem 2rem 2rem;
-    min-height: auto; }
+    min-height: 350px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 .soups-seller-card {
   margin: 4rem auto 0;
@@ -7161,10 +7166,18 @@ footer {
   padding: 6rem 2rem 2rem;
   margin-top: 2rem; }
   .round img {
-    width: 100%; }
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px; }
   .round.alt {
     padding: 2rem 2rem 2rem;
-    min-height: auto; }
+    min-height: 350px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 .center {
   text-align: center; }

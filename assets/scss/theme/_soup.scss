@@ -30,7 +30,12 @@
 
 		&.alt {
 			padding: 2rem 2rem 2rem;
-			min-height: auto;
+			min-height: 350px;
+			min-width: 350px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 }
