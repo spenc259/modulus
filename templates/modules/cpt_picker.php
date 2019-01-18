@@ -31,11 +31,13 @@ if ($module['tax_name'] !== '') {
     echo '<p class="w-100 text-center pt-3">Select a product for more information. </p>';
 }
 
+echo "<div class='row justify-content-center image-grid'>";
 foreach ($cpt->posts as $post) {
-    echo '<div class="col-4 image-grid">';
+    echo '<div class="col-4 image-grid-item">';
     echo '<a href="' . site_url('/' . $module['taxonomy'] . '/' . $post->post_name) . '">';
-    echo '<h2>' . $post->post_title . '</h2>';
+    echo '<h2>' . $post->post_title . '</h2>...';
     echo '<img src="' . get_field('image', $post->ID)['url'] . '" alt="" class="full" />';
     echo '</a>';
     echo '</div>';
 }
+echo "</div>";

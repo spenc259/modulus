@@ -6972,7 +6972,19 @@ footer {
     right: -25px; }
 
 .image-grid {
-  margin-bottom: 4rem; }
+  padding-bottom: 7rem;
+  position: relative; }
+  .image-grid .image-grid-item {
+    margin-bottom: 4rem; }
+  .image-grid h2 {
+    font-size: 23px;
+    font-family: 'Merriweather', sans-serif !important;
+    color: black;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0; }
 
 .content-editor, .icon_title_content {
   margin: 1rem auto;
@@ -7016,15 +7028,10 @@ footer {
     width: 100%; }
   .wholesalers .single {
     padding: 2rem; }
-  .image-grid {
-    position: relative;
-    margin: 2rem 0 0; }
-  .image-grid h2 {
-    text-align: center;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0; }
+  .tax-text {
+    font-family: 'Merriweather', sans-serif !important;
+    font-size: 22px;
+    margin-top: 1rem; }
 /* pages */
 .home .bucket {
   justify-content: space-between;
@@ -7044,21 +7051,6 @@ footer {
   .icon_title_content p {
     color: #595959;
     max-width: 79%; }
-
-.content-editor.taste.round.black_texture_bg {
-  background-position: 10%; }
-  .content-editor.taste.round.black_texture_bg h3 {
-    font-size: 2.999rem; }
-
-.content-editor.consistancy.round.black_texture_bg {
-  background-position: 50%; }
-  .content-editor.consistancy.round.black_texture_bg h3 {
-    font-size: 2.999rem; }
-
-.content-editor.range.round.black_texture_bg {
-  background-position: 90%; }
-  .content-editor.range.round.black_texture_bg h3 {
-    font-size: 2.999rem; }
 
 .soup_seller {
   padding: 2rem 0; }
@@ -7086,31 +7078,8 @@ footer {
 .soups {
   font-family: 'Covered By Your Grace', cursive !important;
   font-size: 35px; }
-  .soups p {
-    position: relative;
-    top: 15px; }
-  .soups .black_texture_bg {
-    background: url('../img/black_texture.jpg');
-    text-align: center;
-    color: white;
-    margin-top: 1.95rem !important;
-    padding: 3rem 4rem !important; }
-  .soups .round {
-    border-radius: 100%;
-    min-height: 315px;
-    padding: 0;
-    margin-top: 0;
-    width: 315px; }
-  .soups .round img {
-    width: 100%; }
-  .soups .round.alt {
-    padding: 2rem 2rem 2rem;
-    min-height: 350px;
-    min-width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+  .soups p a {
+    color: white; }
 
 .soups-seller-card {
   margin: 4rem auto 0;
@@ -7155,21 +7124,32 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   grid-row-gap: 2rem; }
 
-.black_texture_bg {
-  background: url('../img/black_texture.jpg');
-  text-align: center;
-  color: white; }
-
 .round {
   border-radius: 100%;
   min-height: 340px;
   padding: 6rem 2rem 2rem;
   margin-top: 2rem; }
   .round img {
-    width: 100%;
-    height: auto;
-    max-width: 150px;
-    max-height: 150px; }
+    width: auto;
+    height: auto; }
+  .round.formats {
+    padding: 0; }
+  .round.soup {
+    padding: 0;
+    min-height: 275px;
+    text-align: center; }
+  .round.soup-text {
+    padding: 0;
+    margin-top: 0;
+    min-height: 275px;
+    max-height: 275px;
+    max-width: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; }
+  .round.soup-text.small {
+    font-size: 30px; }
   .round.alt {
     padding: 2rem 2rem 2rem;
     min-height: 350px;
@@ -7178,6 +7158,21 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+
+.black_texture_bg {
+  background: url('../img/black_texture.jpg');
+  text-align: center;
+  color: white;
+  margin-top: 1.95rem !important;
+  padding: 3rem 4rem !important; }
+  .black_texture_bg.taste {
+    background-position: 10%; }
+  .black_texture_bg.consistancy {
+    background-position: 50%; }
+  .black_texture_bg.range {
+    background-position: 90%; }
+  .black_texture_bg h3 {
+    font-size: 2.999rem; }
 
 .center {
   text-align: center; }
@@ -7213,3 +7208,6 @@ footer {
 
 .bg_right {
   background-position: 90%; }
+
+.pb-large {
+  padding-bottom: 7rem; }

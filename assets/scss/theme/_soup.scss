@@ -3,39 +3,8 @@
 	font-size: 35px;
 
 	p {
-		// font-family: initial;
-		// font-size: initial;
-		position: relative;
-		top: 15px;
-	}
-
-	.black_texture_bg {
-		background: url('../img/black_texture.jpg');
-		text-align: center;
-		color: white;
-		margin-top: 1.95rem !important;
-		padding: 3rem 4rem !important;
-	}
-
-	.round {
-		border-radius: 100%;
-		min-height: 315px;
-		padding: 0;
-		margin-top: 0;
-		width: 315px;
-
-		img {
-			width: 100%;
-		}
-
-		&.alt {
-			padding: 2rem 2rem 2rem;
-			min-height: 350px;
-			min-width: 350px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+		a {
+			color: white;
 		}
 	}
 }

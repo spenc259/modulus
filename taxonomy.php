@@ -38,16 +38,16 @@ $posts = new WP_Query($tax_args);
             </div>
             <div class="col-7">
                 <?php echo '<h2 class="caps large">' . $name . ' ' . $tax .'</h2>'; ?>
-                <?php echo '<p>Select a product for more information</p>'; ?>
+                <?php echo '<p class="tax-text">Select a product for more information</p>'; ?>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center image-grid">
             <?php
             if ($posts->have_posts()) :
                 while ($posts->have_posts()) : $posts->the_post();
-                echo '<div class="col-4 image-grid">';
+                echo '<div class="col-4 image-grid-item">';
                 echo '<a href="' . site_url('/'. $tax .'/' . $post->post_name ) . '">';
-                echo '<h2>' . $post->post_title . '</h2>';
+                echo '<h2>' . $post->post_title . '</h2>...';
                 echo '<img src="' . get_field('image', $post->ID)['url'] . '" alt="" class="full" />';
                 echo '</a>';
                 echo '</div>';

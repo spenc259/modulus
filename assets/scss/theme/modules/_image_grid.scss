@@ -1,3 +1,19 @@
 .image-grid {
-	margin-bottom: 4rem;
+	padding-bottom: 7rem;
+	position: relative;
+
+	.image-grid-item {
+		margin-bottom: 4rem;
+	}
+
+	h2 {
+		font-size: 23px;
+		font-family: 'Merriweather', sans-serif !important;
+		color: black;
+		text-align: center;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
 }
