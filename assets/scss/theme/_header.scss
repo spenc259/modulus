@@ -65,10 +65,12 @@ header {
 }
 
 #home-header {
-	background: url('../img/black_texture_with_logo.jpg');
-	background-size: cover;
-	background-position: 50%;
+	// background: url('../img/black_texture_with_logo.jpg');
+	background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
+	// background-size: contain, cover;
+	background-position: 50% 26%, 50%;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 	padding: 0;
 	display: flex;
 	justify-content: center;
@@ -90,12 +92,15 @@ header {
 	#home-logo {
 		height: 126px;
 	}
+
+	&.food {
+	}
 }
 
 #site-header {
-	background: url('../img/black_texture_with_logo.jpg');
-	background-size: contain;
-	background-position: 50%;
+	background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
+	background-position: 50% 0%, 50%;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	padding: 0;
 	display: flex;

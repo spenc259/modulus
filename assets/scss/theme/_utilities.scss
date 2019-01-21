@@ -78,12 +78,14 @@
 		align-items: center;
 
 		&.bespoke_icons_caption {
-			height: 195px;
-			width: 195px;
-			min-height: 195px;
-			min-width: 195px;
-			max-width: 195px;
-			padding: 0 !important;
+			&.bespoke {
+				height: 195px;
+				width: 195px;
+				min-height: 195px;
+				min-width: 195px;
+				max-width: 195px;
+				padding: 0 !important;
+			}
 
 			p {
 				font-size: 1.3rem;

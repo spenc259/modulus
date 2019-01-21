@@ -1,4 +1,4 @@
-<header id="home-header" class="large">
+<header id="home-header" class="large food">
     <img id="home-logo" src="<?php echo site_url('/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'); ?>" alt="Logo" srcset="">
 </header>
 

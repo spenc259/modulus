@@ -6840,10 +6840,10 @@ header {
     width: 100%; }
 
 #home-header {
-  background: url('../img/black_texture_with_logo.jpg');
-  background-size: cover;
-  background-position: 50%;
+  background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
+  background-position: 50% 26%, 50%;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   padding: 0;
   display: flex;
   justify-content: center; }
@@ -6857,17 +6857,16 @@ header {
     height: 100vh; }
   #home-header #home-logo {
     height: 126px; }
-
-#site-header {
-  background: url('../img/black_texture_with_logo.jpg');
-  background-size: contain;
-  background-position: 50%;
-  background-attachment: fixed;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  height: 30vh;
-  padding-top: 25.5vh; }
+  #site-header {
+    background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
+    background-position: 50% 0%, 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    padding-top: 25.5vh; }
   #site-header #logo {
     position: absolute; }
   #site-header #logo.full {
@@ -7162,7 +7161,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  .round.alt.bespoke_icons_caption {
+  .round.alt.bespoke_icons_caption.bespoke {
     height: 195px;
     width: 195px;
     min-height: 195px;
