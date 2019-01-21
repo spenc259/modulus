@@ -6857,16 +6857,17 @@ header {
     height: 100vh; }
   #home-header #home-logo {
     height: 126px; }
-  #site-header {
-    background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
-    background-position: 50% 0%, 50%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    height: 30vh;
-    padding-top: 25.5vh; }
+
+#site-header {
+  background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
+  background-position: 50% 0%, 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  padding-top: 25.5vh; }
   #site-header #logo {
     position: absolute; }
   #site-header #logo.full {
@@ -6977,6 +6978,8 @@ footer {
   position: relative; }
   .image-grid .image-grid-item {
     margin-bottom: 4rem; }
+  .image-grid .image-grid-item img {
+    width: 100%; }
   .image-grid h2 {
     font-size: 23px;
     font-family: 'Merriweather', sans-serif !important;
@@ -7028,7 +7031,7 @@ footer {
   .wholesalers img {
     width: 100%; }
   .wholesalers .single {
-    padding: 2rem; }
+    padding: 7rem 2rem 2rem; }
   .tax-text {
     font-family: 'Merriweather', sans-serif !important;
     font-size: 22px;
@@ -7039,8 +7042,7 @@ footer {
   background: url('../img/Caramel.png');
   background-size: cover;
   background-position: 0% 46%;
-  background-repeat: no-repeat;
-  padding: 4rem 0; }
+  background-repeat: no-repeat; }
   .home .bucket img {
     width: 100%; }
 
@@ -7168,8 +7170,11 @@ footer {
     min-width: 195px;
     max-width: 195px;
     padding: 0 !important; }
+    .round.alt.bespoke_icons_caption.bespoke p {
+      font-size: 1.3rem;
+      margin-bottom: 0; }
   .round.alt.bespoke_icons_caption p {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     margin-bottom: 0; }
 
 .black_texture_bg {
