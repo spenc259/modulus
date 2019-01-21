@@ -7170,7 +7170,8 @@ footer {
     max-width: 195px;
     padding: 0 !important; }
   .round.alt.bespoke_icons_caption p {
-    font-size: 1rem; }
+    font-size: 1.3rem;
+    margin-bottom: 0; }
 
 .black_texture_bg {
   background: url('../img/black_texture.jpg');
