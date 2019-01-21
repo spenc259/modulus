@@ -6778,7 +6778,8 @@ body {
 
 main {
   background: #f2f2f3;
-  padding-top: 114px; }
+  padding-top: 114px;
+  position: relative; }
 
 .bucket img {
   width: 100%; }
@@ -6856,7 +6857,8 @@ header {
     padding-top: 95.5vh;
     height: 100vh; }
   #home-header #home-logo {
-    height: 126px; }
+    height: 126px;
+    z-index: 2; }
 
 #site-header {
   background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
@@ -7062,6 +7064,14 @@ footer {
 
 .row.justify-content-center.about_us {
   margin-bottom: 8rem; }
+
+.scroll {
+  font-size: 1rem;
+  color: white;
+  position: fixed;
+  bottom: 10%;
+  text-align: center;
+  width: 100%; }
 
 .contact img {
   width: auto; }
