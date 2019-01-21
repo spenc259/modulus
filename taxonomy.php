@@ -43,10 +43,12 @@ $posts = new WP_Query($tax_args);
         </div>
         <div class="row justify-content-center image-grid">
             <?php
+
             if ($posts->have_posts()) :
                 while ($posts->have_posts()) : $posts->the_post();
                 echo '<div class="col-4 image-grid-item">';
-                echo '<a href="' . site_url('/'. $tax .'/' . $post->post_name ) . '">';
+                
+                echo '<a href="' . site_url('/'. substr($tax, 0, -1) .'/' . $post->post_name ) . '">';
                 echo '<h2>' . $post->post_title . '</h2>';
                 echo '<img src="' . get_field('image', $post->ID)['url'] . '" alt="" class="full" />';
                 echo '</a>';

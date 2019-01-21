@@ -7162,6 +7162,15 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+  .round.alt.bespoke_icons_caption {
+    height: 195px;
+    width: 195px;
+    min-height: 195px;
+    min-width: 195px;
+    max-width: 195px;
+    padding: 0 !important; }
+  .round.alt.bespoke_icons_caption p {
+    font-size: 1rem; }
 
 .black_texture_bg {
   background: url('../img/black_texture.jpg');
