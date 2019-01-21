@@ -27,42 +27,47 @@ $tiny: 0.354rem;
 
 $color: #000000;
 
-
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: $alt_family;;
+	font-family: $alt_family;
 }
 
 h1 {
 	font-size: $h1;
 }
 
-
 h2 {
 	font-size: $h2;
 }
-
 
 h3 {
 	font-size: $h3;
 }
 
-
 h4 {
 	font-size: $h4;
 }
 
+h5 {
+	font-size: $h5;
+}
 
 h5 {
 	font-size: $h5;
 }
 
+/* Padding */
 
-h5 {
-	font-size: $h5;
-}
+$p-lg: 7rem;
+$p-md: 4rem;
+$p-sm: 1rem;
+
+/* Margin */
+
+$m-lg: 7rem;
+$m-md: 4rem;
+$m-sm: 1rem;

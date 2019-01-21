@@ -150,5 +150,37 @@
 }
 
 .pb-large {
-	padding-bottom: 7rem;
+	padding-bottom: $p-lg;
+}
+
+.pb-medium {
+	padding-bottom: $p-md;
+}
+
+.pb-small {
+	padding-bottom: $p-sm;
+}
+
+.pt-large {
+	padding-top: $p-lg;
+}
+
+.pt-medium {
+	padding-top: $p-md;
+}
+
+.pt-small {
+	padding-top: $p-sm;
+}
+
+.mb-large {
+	margin-bottom: $m-lg;
+}
+
+.mb-medium {
+	margin-bottom: $m-md;
+}
+
+.mb-small {
+	margin-bottom: $m-sm;
 }

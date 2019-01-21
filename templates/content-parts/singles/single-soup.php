@@ -25,9 +25,9 @@ $nutritionals = get_field('nutritinal_information');
 <div class="container-fluid">
     <div style="background-image: url('<?php echo $image['url']; ?>');" class="parallax"></div>
 </div>
-<div class="container">
+<div class="container soup-single">
     <div class="row justify-content-center">
-        <h3 class="w-100 text-center mt-4">Ingredients</h3>
+        <h3 class="w-100 text-center mt-4">Ingredients...</h3>
         <p>
             <?php
                 $count = count($ingredients);
@@ -79,7 +79,7 @@ $nutritionals = get_field('nutritinal_information');
         
     </div>
     <div class="row justify-content-center">
-        <button class="green rounded5 p-2 mb-4"><a href="<?php echo site_url('/soup-seller-cards/' . str_replace(" ", '-', strtolower($title))); ?>">Download Soup Seller Card</a></button>
+        <button class="green rounded5"><a href="<?php echo site_url('/soup-seller-cards/' . str_replace(" ", '-', strtolower($title))); ?>">Download Soup Seller Card</a></button>
     </div>
 </div>
 

@@ -1,27 +1,22 @@
 .contact {
-    img {
-	    width: auto;
-    }
+	img {
+		width: auto;
+	}
 
-    a {
-        color: black;
-    }
+	a {
+		color: black;
+	}
 
-    .content-editor {
-        margin: 0;
-        padding: 0;
-    }
+	.content-editor {
+		margin: 0;
+		padding: 0;
+	}
 
-    .heading.col-12.text-center {
-        padding: 4rem 0 0;
+	.heading.col-12.text-center {
+		padding: 0rem 0 0;
 
-        &.sub {
-            padding: 0;
-        }
-    }
-
-    .bucket {
-        margin-bottom: 0 !important;
-        padding: 0 0 5rem;
-    }
+		&.sub {
+			padding: 0;
+		}
+	}
 }

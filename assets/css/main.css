@@ -6528,6 +6528,8 @@ h5 {
 
 h5 {
   font-size: 1rem; }
+/* Padding */
+/* Margin */
 /* Theme */
 *, *::before, *::after {
   box-sizing: border-box; }
@@ -7068,12 +7070,9 @@ footer {
     margin: 0;
     padding: 0; }
   .contact .heading.col-12.text-center {
-    padding: 4rem 0 0; }
+    padding: 0rem 0 0; }
   .contact .heading.col-12.text-center.sub {
     padding: 0; }
-  .contact .bucket {
-    margin-bottom: 0 !important;
-    padding: 0 0 5rem; }
 
 .soups {
   font-family: 'Covered By Your Grace', cursive !important;
@@ -7088,6 +7087,11 @@ footer {
     font-size: 89px;
     line-height: 0.9;
     margin: 5rem 0 3rem; }
+
+.soup-single h3 {
+  padding-top: 4rem; }
+  .soup-single button {
+    margin-top: 4rem; }
 
 .formats {
   margin: 1rem auto 6rem; }
@@ -7211,3 +7215,27 @@ footer {
 
 .pb-large {
   padding-bottom: 7rem; }
+
+.pb-medium {
+  padding-bottom: 4rem; }
+
+.pb-small {
+  padding-bottom: 1rem; }
+
+.pt-large {
+  padding-top: 7rem; }
+
+.pt-medium {
+  padding-top: 4rem; }
+
+.pt-small {
+  padding-top: 1rem; }
+
+.mb-large {
+  margin-bottom: 7rem; }
+
+.mb-medium {
+  margin-bottom: 4rem; }
+
+.mb-small {
+  margin-bottom: 1rem; }

@@ -29,7 +29,7 @@ $type = get_queried_object()->post_type;
 <div class="container-fluid">
     <div style="background-image: url('<?php echo $image['url']; ?>');" class="parallax"></div>
 </div>
-<div class="container">
+<div class="container soup-single">
     <div class="row justify-content-center">
         <h3 class="w-100 text-center mt-4">Ingredients</h3>
         <p>
@@ -83,7 +83,7 @@ $type = get_queried_object()->post_type;
         
     </div>
     <div class="row justify-content-center">
-        <button class="green rounded5 p-2 mb-4"><a href="<?php echo site_url('/' . $type . '-seller-cards/' . str_replace(" ", '-', strtolower($title))); ?>">Download Soup Seller Card</a></button>
+        <button class="green rounded5 p-2 mt-5 mb-medium"><a href="<?php echo site_url('/' . $type . '-seller-cards/' . str_replace(" ", '-', strtolower($title))); ?>">Download Soup Seller Card</a></button>
     </div>
 </div>
 
