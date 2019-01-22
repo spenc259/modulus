@@ -6916,7 +6916,8 @@ footer {
   background: url('../img/black_texture.jpg');
   background-size: cover;
   background-position: 50%;
-  color: white; }
+  color: white;
+  position: relative; }
   #site-footer a {
     padding: 0 1rem;
     color: white; }
