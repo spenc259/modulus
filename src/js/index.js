@@ -1,29 +1,11 @@
-import { myModule } from './module';
-import Glide from '@glidejs/glide';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-// new Glide('.carousel').mount();
+import Slider from './slider/slider'
 
-// let glide = new Glide('.glide', {
-// 	type: 'carousel',
-// 	perView: 3,
-// 	focusAt: 'center'
-// });
-
-// glide.mount();
-
-// let eventsGlide = new Glide('.events', {
-// 	type: 'carousel',
-// 	perView: 1,
-// 	focusAt: 'center'
-// });
-
-// eventsGlide.mount();
-
-myModule();
-
-// import Slider from './slider'
-
-// ReactDOM.render(
-//     <Slider />,
-//     document.getElementById('slider')
-// )
+ReactDOM.render(
+    <Slider>
+        <slide></slide>
+    </Slider>,
+    document.getElementById('slider')
+)
