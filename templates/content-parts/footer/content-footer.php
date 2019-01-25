@@ -21,10 +21,11 @@ $contact_info = get_field('contact_info', 'option');
 					<div class="col-md-3">
 						<div class="social text-right">
 							<h5>Follow Us</h5>
+							<?php $socialMedia = get_field('social_media', 'option'); ?>
 							<!-- <a href="<?php //echo get_field('facebook_url', 'option'); ?>"><i class="fab fa-facebook-f"></i></a> -->
 							<!-- <a href="<?php //echo get_field('twitter_url', 'option'); ?>"><i class="fab fa-twitter"></i></a> -->
-							<a href="<?php echo get_field('instagram_url', 'option'); ?>"><i class="fab fa-instagram"></i></a>
-							<a href="<?php echo get_field('linkedin_url', 'option'); ?>"><i class="fab fa-linkedin"></i></a>
+							<a href="<?php echo $socialMedia['instagram']; ?>"><i class="fab fa-instagram"></i></a>
+							<a href="<?php echo $socialMedia['linked_in']; ?>"><i class="fab fa-linkedin"></i></a>
 						</div>
 					</div>
 				</div>
