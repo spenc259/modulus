@@ -74,6 +74,7 @@ header {
 	padding: 0;
 	display: flex;
 	justify-content: center;
+	background-size: auto, cover;
 
 	&.large {
 		height: 100vh;
@@ -103,6 +104,7 @@ header {
 	padding: 0;
 	display: flex;
 	justify-content: center;
+	background-size: auto, cover;
 
 	height: 30vh;
 	padding-top: 25.5vh;

@@ -6847,7 +6847,8 @@ header {
   background-repeat: no-repeat;
   padding: 0;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-size: auto, cover; }
   #home-header.large {
     height: 100vh; }
   #home-header.large img {
@@ -6868,13 +6869,15 @@ header {
   padding: 0;
   display: flex;
   justify-content: center;
+  background-size: auto, cover;
   height: 30vh;
   padding-top: 25.5vh; }
   #site-header #logo {
     position: absolute; }
   #site-header #logo.full {
     width: auto;
-    max-width: 100%; }
+    max-width: 100%;
+    z-index: 2; }
 
 nav {
   width: 100%; }
