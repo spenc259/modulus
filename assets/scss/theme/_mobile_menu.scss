@@ -1,0 +1,121 @@
+$mob-height: 70px;
+$mob-menu-colour: black;
+$mob-menu-colour-alt: white;
+
+$mob-bar-height: 1px;
+
+$cubic: cubic-bezier(.77, 0, .18, 1);
+
+.mobile-menu-header {
+	width: 100vw;
+	height: $mob-height;
+	position: fixed;
+	background: $mob-menu-colour;
+	z-index: 3;
+
+	&.menu-opened {
+		ul#menu-primary-menu {
+			height: 100vh;
+			visibility: visible;
+
+			li {
+				font-size: 16px;
+			}
+		}
+
+		#burger {
+			.tBar {
+				transform: translateY(4px) rotate(45deg);
+			}
+
+			.mBar {
+				height: 0;
+			}
+
+			.bBar {
+				transform: translateY(-5px) rotate(-45deg);
+			}
+		}
+	}
+
+	.top-row {
+		height: 100%;
+
+		.mobile-logo {
+			img {
+				max-width: 30%;
+				height: auto;
+				left: 0;
+				margin-left: 2rem;
+				position: relative;
+				top: 3px;
+			}
+		}
+	}
+}
+
+.burger-container {
+	height: $mob-height;
+	width: $mob-height;
+	position: absolute;
+	right: 0;
+	transition: background 0.1s $cubic;
+
+	&:hover {
+		background: lighten($mob-menu-colour, 10%);
+		cursor: pointer;
+	}
+
+	#burger {
+		height: 100%;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+
+		.bar {
+			height: $mob-bar-height;
+			width: 30%;
+			margin: ($mob-bar-height * 2) auto ($mob-bar-height * 2);
+			background: $mob-menu-colour-alt;
+			display: block;
+			position: relative;
+
+			transition: all 0.3s $cubic;
+		}
+
+		.tBar {
+			transform: translateY(0) rotate(0);
+		}
+
+		.mBar {
+			height: $mob-bar-height;
+		}
+
+		.bBar {
+			transform: translateY(0) rotate(0);
+		}
+	}
+}
+
+ul#menu-primary-menu {
+	position: relative;
+	top: 0;
+	background: $mob-menu-colour;
+	height: 0vh;
+	visibility: hidden;
+	padding: 0;
+	text-align: center;
+
+	transition: height 0.3s $cubic;
+
+	li {
+		font-size: 0;
+		transition: font-size 0.1s $cubic 0.3s;
+	}
+
+	a {
+		display: block;
+		padding: 1rem;
+		color: $mob-menu-colour-alt;
+	}
+}
