@@ -37,7 +37,7 @@ $contact_info = get_field('contact_info', 'option');
 						</div>
 					</div>
 					<div class="col-md-5">
-						T: <?php echo $contact_info['telephone']; ?><span> </span> E:  <?php echo $contact_info['email']; ?>
+						T:&nbsp;<?php echo $contact_info['telephone']; ?><span> </span> E:&nbsp;<?php echo $contact_info['email']; ?>
 					</div>
 					<div class="col-md-2 text-right">
 						Website design by <img src="<?php echo site_url('/wp-content/uploads/2018/11/Intimation-pin.png'); ?>" alt="intimation logo" />

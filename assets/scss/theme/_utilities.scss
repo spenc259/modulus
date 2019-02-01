@@ -205,3 +205,13 @@
 .mb-small {
 	margin-bottom: $m-sm;
 }
+
+@include media-breakpoint-up(md) {
+	.pt-md-large {
+		padding-top: $p-lg;
+	}
+
+	.pb-md-large {
+		padding-bottom: $p-lg;
+	}
+}

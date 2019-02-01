@@ -1,3 +1,10 @@
+let burger = document.querySelector('.burger-container'),
+	header = document.querySelector('.mobile-menu-header');
+
+burger.onclick = () => {
+	header.classList.toggle('menu-opened');
+};
+
 // Test via a getter in the options object to see if the passive property is accessed
 var supportsPassive = false;
 try {
@@ -54,17 +61,17 @@ try {
 						prevArrow:
 							'<button class="slick-prev slick-arrow" aria-label="Prev" type="button" style="display: inline-block;"><i class="fa fa-chevron-left red" aria-hidden="true"></i></button>',
 						nextArrow:
-							'<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;"><i class="fa fa-chevron-right red" aria-hidden="true"></i></button>'
-						// responsive: [
-						// 	{
-						// 		breakpoint: 991,
-						// 		settings: {
-						// 			arrows: false,
-						// 			centerMode: false,
-						// 			slidesToShow: 1
-						// 		}
-						// 	}
-						// ]
+							'<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;"><i class="fa fa-chevron-right red" aria-hidden="true"></i></button>',
+						responsive: [
+							{
+								breakpoint: 991,
+								settings: {
+									arrows: false,
+									centerMode: false,
+									slidesToShow: 1
+								}
+							}
+						]
 					});
 				}
 			});

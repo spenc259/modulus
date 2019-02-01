@@ -26,7 +26,9 @@
 }
 
 .soup_seller {
-	padding: 2rem 0;
+	@include media-breakpoint-up(md) {
+		padding: 2rem 0;
+	}
 
 	h3 {
 		font-size: 89px;

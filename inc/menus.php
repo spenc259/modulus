@@ -22,3 +22,20 @@ function primary_nav()
 	);
 }
 add_action('navigation', 'primary_nav');
+
+
+/**
+ * Mobile Menu
+ */
+// function mobile_menu() 
+// {
+// 	wp_nav_menu(
+// 		array(
+// 			'theme_location' => 'primary',
+// 			'container' => false,
+// 			'menu_class' => 'mobile-menu',
+// 			'items_wrap' => '<ul class="row %2$s">%3$s</ul>'
+// 		)
+// 	);
+// }
+// add_action('mobile_menu', 'mobile_menu');

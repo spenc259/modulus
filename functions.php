@@ -18,6 +18,11 @@ require get_template_directory() . '/inc/theme-setup.php';
  */
 require get_template_directory() . '/inc/menus.php';
 
+/**
+ * Mobile Menus
+ */
+require get_template_directory() . '/inc/mobile_menu.php';
+
 
 /**
  * Custom Post Types
@@ -155,3 +160,5 @@ require get_template_directory() . '/inc/modal/modal.php';
  * @since 0.4.0
  */
 require get_template_directory() . '/inc/scss/watcher.php';
+
+

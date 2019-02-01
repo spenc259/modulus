@@ -65,19 +65,19 @@ header {
 }
 
 #home-header {
-	// background: url('../img/black_texture_with_logo.jpg');
 	background-image: url('../img/food-fg-image.png'), url('../img/Background-image-resized.jpg');
-	// background-size: contain, cover;
-	background-position: 50% 26%, 50%;
+	background-position: 50% 20%, 50%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	padding: 0;
 	display: flex;
 	justify-content: center;
-	background-size: auto, cover;
+	background-size: contain, cover;
 
 	&.large {
-		height: 100vh;
+		@include media-breakpoint-up(md) {
+			height: 100vh;
+		}
 
 		img {
 			position: fixed;
@@ -86,13 +86,24 @@ header {
 	}
 
 	&.shrink {
-		padding-top: 95.5vh;
-		height: 100vh;
+		@include media-breakpoint-up(md) {
+			padding-top: 95.5vh;
+		}
 	}
 
 	#home-logo {
-		height: 126px;
-		z-index: 2;
+		display: none;
+	}
+
+	@include media-breakpoint-up(md) {
+		background-size: auto, cover;
+		background-position: 50% 26%, 50%;
+
+		#home-logo {
+			display: block;
+			height: 126px;
+			z-index: 2;
+		}
 	}
 }
 
@@ -110,7 +121,6 @@ header {
 	padding-top: 25.5vh;
 
 	#logo {
-		// height: 126px;
 		position: absolute;
 
 		&.full {
