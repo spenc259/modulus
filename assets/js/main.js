@@ -111,9 +111,6 @@ function waypoint(el, bool = false) {
  * may be better to return the state of the waypoint ie top, bottom etc
  */
 function checkWayPoint(distanceToScroll) {
-	console.log('window.scrollY', window.scrollY);
-	console.log('distanceToScroll', distanceToScroll);
-
 	if (window.scrollY < distanceToScroll) {
 		return false;
 	} else if (window.scrollY >= distanceToScroll) {
@@ -126,16 +123,9 @@ var waypointsArray = setWaypoints([ 'home-logo' ]);
 function setWaypoints(elements) {
 	var waypoints = [];
 
-	var header = document.getElementById('home-header');
-	// distanceToScroll = header.clientHeight - (elementBottom + element.clientHeight / 2);
-
 	elements.forEach((element) => {
 		var currentElement = document.getElementById(element);
 		var elementBottom = currentElement.getBoundingClientRect().bottom;
-		var distance = header.clientHeight - (elementBottom + currentElement.clientHeight / 2);
-		console.log('distance', distance);
-		console.log('elementBottom', elementBottom);
-		console.log('element bottom plus half', elementBottom + currentElement.clientHeight / 2);
 
 		waypoints[element] = elementBottom + currentElement.clientHeight;
 	});

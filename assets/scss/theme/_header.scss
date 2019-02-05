@@ -93,7 +93,7 @@ header {
 	}
 
 	#home-logo {
-		// display: none;
+		display: none;
 	}
 
 	@include media-breakpoint-up(md) {
@@ -101,7 +101,7 @@ header {
 		background-position: 50% 26%, 50%;
 
 		#home-logo {
-			// display: block;
+			display: block;
 			height: 126px;
 			z-index: 2;
 		}

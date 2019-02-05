@@ -6932,11 +6932,14 @@ header {
     #home-header.shrink {
       padding-top: 95.5vh;
       height: 100vh; } }
+  #home-header #home-logo {
+    display: none; }
   @media (min-width: 768px) {
   #home-header {
     background-size: auto, cover;
     background-position: 50% 26%, 50%; }
     #home-header #home-logo {
+      display: block;
       height: 126px;
       z-index: 2; } }
 
