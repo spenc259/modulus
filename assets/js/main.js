@@ -83,38 +83,22 @@ try {
 /**
  * Waypoints
  */
-function waypoint(el) {
-	var element = document.getElementById(el);
+function waypoint(el, bool = false) {
+	var element = document.getElementById(el),
+		header = document.getElementById('home-header'),
+		url = location.origin == 'https://wordpress.test' ? location.origin + '/redemption' : location.origin;
 
-	if (element) {
-		var elementBottom = element.getBoundingClientRect().bottom,
-			header = document.getElementById('home-header'),
-			distanceToScroll = elementBottom + 110;
-		console.log(elementBottom);
-	}
-
-	checkWayPoint(distanceToScroll);
-
-	var url = location.origin == 'https://wordpress.test' ? location.origin + '/redemption' : location.origin;
-
-	if (checkWayPoint(distanceToScroll)) {
-		if (header) {
-			element.className = 'shrink';
-			header.className = 'shrink';
-			element.setAttribute(
-				'src',
-				url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png'
-			);
-		}
+	if (bool) {
+		element.className = 'shrink';
+		header.className = 'shrink';
+		element.setAttribute('src', url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo.png');
 	} else {
-		if (header) {
-			element.className = 'large';
-			header.className = 'large';
-			element.setAttribute(
-				'src',
-				url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
-			);
-		}
+		element.className = 'large';
+		header.className = 'large';
+		element.setAttribute(
+			'src',
+			url + '/wp-content/themes/intimation-pro/assets/img/Redemption-master-logo-white.png'
+		);
 	}
 }
 
@@ -127,14 +111,35 @@ function waypoint(el) {
  * may be better to return the state of the waypoint ie top, bottom etc
  */
 function checkWayPoint(distanceToScroll) {
-	let waypoint = false;
+	console.log('window.scrollY', window.scrollY);
+	console.log('distanceToScroll', distanceToScroll);
 
 	if (window.scrollY < distanceToScroll) {
 		return false;
 	} else if (window.scrollY >= distanceToScroll) {
-		waypoint = true;
 		return true;
 	}
+}
+
+var waypointsArray = setWaypoints([ 'home-logo' ]);
+
+function setWaypoints(elements) {
+	var waypoints = [];
+
+	var header = document.getElementById('home-header');
+	// distanceToScroll = header.clientHeight - (elementBottom + element.clientHeight / 2);
+
+	elements.forEach((element) => {
+		var currentElement = document.getElementById(element);
+		var elementBottom = currentElement.getBoundingClientRect().bottom;
+		var distance = header.clientHeight - (elementBottom + currentElement.clientHeight / 2);
+		console.log('distance', distance);
+		console.log('elementBottom', elementBottom);
+		console.log('element bottom plus half', elementBottom + currentElement.clientHeight / 2);
+
+		waypoints[element] = elementBottom + currentElement.clientHeight;
+	});
+	return waypoints;
 }
 
 /**
@@ -150,18 +155,20 @@ function onScroll() {
 
 function requestTick() {
 	if (!ticking) {
-		requestAnimationFrame(update);
+		requestAnimationFrame(function() {
+			update(waypointsArray);
+		});
 	}
 	ticking = true;
 }
 
-function update() {
+function update(waypoints) {
 	ticking = false;
-
-	var waypoints = [ 'home-logo' ];
-	for (var index = 0; index < waypoints.length; index++) {
-		var element = waypoints[index];
-		waypoint(element);
+	for (const key in waypoints) {
+		if (waypoints.hasOwnProperty(key)) {
+			const element = waypoints[key];
+			waypoint(key, checkWayPoint(element));
+		}
 	}
 }
 

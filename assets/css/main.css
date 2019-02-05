@@ -6930,15 +6930,13 @@ header {
     top: 36%; }
   @media (min-width: 768px) {
     #home-header.shrink {
-      padding-top: 95.5vh; } }
-  #home-header #home-logo {
-    display: none; }
+      padding-top: 95.5vh;
+      height: 100vh; } }
   @media (min-width: 768px) {
   #home-header {
     background-size: auto, cover;
     background-position: 50% 26%, 50%; }
     #home-header #home-logo {
-      display: block;
       height: 126px;
       z-index: 2; } }
 

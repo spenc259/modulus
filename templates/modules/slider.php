@@ -1,5 +1,5 @@
 
-<section class='col-12 slider pt-small pt-md-large pb-md-large'>
+<section class='col-12 slider text-sm-center pt-small pt-md-large pb-md-large'>
     <?php foreach ( $module['slider'] as $key => $slide ) : ?>
         <?php $link = get_the_permalink($slide->ID); ?>
         <?php $image_id = get_the_post_thumbnail_url($slide->ID); ?>
