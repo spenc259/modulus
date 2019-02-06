@@ -162,3 +162,14 @@ require get_template_directory() . '/inc/modal/modal.php';
 require get_template_directory() . '/inc/scss/watcher.php';
 
 
+/**
+ * MPDF Integration
+ */
+require get_template_directory() . '/inc/mpdf/mpdf.php';
+
+
+/**
+ * Soup Seller
+ * @since 0.4.0
+ */
+require get_template_directory() . '/inc/soup-seller/soup-seller.php';
