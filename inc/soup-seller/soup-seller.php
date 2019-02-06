@@ -93,12 +93,11 @@ function generatePDF( $data )
 function ip_admin_soup_seller_scripts()
 {
     wp_enqueue_script('soups-script', get_template_directory_uri() . '/inc/soup-seller/js/soupSeller.js', array('jquery'), false, true);
-    // wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/css/admin.css', array(), null);
-    global $post;
+
+    global $post; // needed to get the current post ID to pass to the JS file
     $data = array(
         'ajaxurl' => admin_url('admin-ajax.php'),
         'postID' => $post->ID
-		// 'nonce' => wp_create_nonce( 'get_events' )
     );
     wp_localize_script('soups-script', 'get_soups', $data);
 }
