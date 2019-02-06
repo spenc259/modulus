@@ -124,10 +124,12 @@ function setWaypoints(elements) {
 	var waypoints = [];
 
 	elements.forEach((element) => {
-		var currentElement = document.getElementById(element);
-		var elementBottom = currentElement.getBoundingClientRect().bottom;
+		var currentElement = document.getElementById(element),
+			elementBottom = currentElement.getBoundingClientRect().bottom,
+			header = document.getElementById('home-header'),
+			newScrollDistance = header.clientHeight - (elementBottom - currentElement.clientHeight / 2) + 17;
 
-		waypoints[element] = elementBottom + currentElement.clientHeight;
+		waypoints[element] = newScrollDistance;
 	});
 	return waypoints;
 }
