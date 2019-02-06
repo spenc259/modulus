@@ -35,14 +35,20 @@ function get_soups()
     $pdf['ingredients'] = rtrim($ingredients, ', ');
     $pdf['nutrients'] = $nutrients;
 
-    $pdfinfo = generatePDF($pdf);
+    $pdf_link = generatePDF($pdf);
+    $mailsent = sendPDFViaMail($pdf_link, $pdf, true, true);
 
-    wp_send_json_success($pdfinfo);
+    $data->mail_sent_ok = $mailsent;
+    $data->pdf_data = $pdf;
+    $data->pdf_link = $pdf_link;
+
+    wp_send_json_success($data);
 }
 add_action('wp_ajax_nopriv_get_soups', 'get_soups');
 add_action('wp_ajax_get_soups', 'get_soups');
 
-// require get_template_directory() . '/inc/mpdf/vendor/autoload.php';
+
+
 
 /**
  * Generate PDF
@@ -84,7 +90,9 @@ function generatePDF( $data )
     $mpdf->WriteHTML($output, 2);
     $mpdf->Output(get_template_directory() . '/inc/mpdf/pdfs/' . $data['title'] . '.pdf', \Mpdf\Output\Destination::FILE);
 
-    return $data;
+    $outputLink = wp_upload_dir() . '/Soup_seller_cards/' . $data['title'] . '.pdf';
+
+    return $outputLink;
 }
 
 /**
@@ -110,3 +118,21 @@ function ip_admin_soup_seller_scripts()
     
 }
 add_action('admin_enqueue_scripts', 'ip_admin_soup_seller_scripts');
+
+/**
+ * Send Email to Admin
+ */
+function sendPDFViaMail($attachment, $data = '', $admin = true, $dev = false)
+{
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    if ($dev) $headers[] = 'Bcc:paul.test@intimation.uk';
+    $to = ($admin) ? get_option('admin_email') : 'paul.spence@intimation.uk';
+
+    $subject = 'Soup Seller PDF - ' . $data['title'];
+    $message = "You have generated a Soup Seller PDF";
+
+    //$attachments = '/var/www/vhosts/suretrainingscotland.co.uk/httpdocs/wp-content/uploads/2018/08/CPC-Joining-Instructions-example-for-web.pdf';
+
+
+    $sendEmail = wp_mail($to, $subject, $message, $headers, $attachment);
+}
