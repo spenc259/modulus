@@ -1,5 +1,7 @@
 (function() {
 	var btn = $('.acf-field .acf-input .selected input[name="acf[field_5c5abec6e9931]"]');
+	//var btn = $('.acf-field .acf-input .selected input[name="acf[field_5c5b082c05265]"]'); // live
+
 	btn.on('click', function(e) {
 		var data = {
 			action: 'get_soups',

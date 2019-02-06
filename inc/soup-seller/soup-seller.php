@@ -95,10 +95,18 @@ function ip_admin_soup_seller_scripts()
     wp_enqueue_script('soups-script', get_template_directory_uri() . '/inc/soup-seller/js/soupSeller.js', array('jquery'), false, true);
 
     global $post; // needed to get the current post ID to pass to the JS file
-    $data = array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
-        'postID' => $post->ID
-    );
-    wp_localize_script('soups-script', 'get_soups', $data);
+    if (isset($post->ID)) {
+        $data = array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'postID' => $post->ID
+        );
+        wp_localize_script('soups-script', 'get_soups', $data);
+    } else {
+        $data = array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+        );
+        wp_localize_script('soups-script', 'get_soups', $data);
+    }
+    
 }
 add_action('admin_enqueue_scripts', 'ip_admin_soup_seller_scripts');
