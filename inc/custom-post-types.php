@@ -4,13 +4,14 @@ $cpts = array(
 	'formats' => array(
 		'singular' => 'format',
 		'display' => 'format',
-		'icon'		=> 'dashicons-format-gallery'
+		'icon'		=> 'dashicons-format-gallery',
+		'description' => 'this is my formats description'
 	),
 	'soups' => array(
 		'singular' => 'soup',
 		'display' => 'soup',
 		'icon' => get_stylesheet_directory_uri() . '/assets/img/icons/Icons1-01.png',
-		'description' => 'this is my soupss description'
+		'description' => 'this is my soups description'
 	),
 	'stews' => array(
 		'singular' => 'stew',
@@ -81,8 +82,7 @@ function inti_cpt_generator( $cpts )
 			'labels'      => $labels,
 			'has_archive' => true,
 			'supports'    => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes' ),
-			'menu_icon'   => $cpt['icon'],
-			'description' => $cpt['description']
+			'menu_icon'   => $cpt['icon']
 		);
 
 		register_post_type( $cpt['singular'], $args );
