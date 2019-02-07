@@ -36,7 +36,7 @@ function get_soups()
     $pdf['nutrients'] = $nutrients;
 
     $pdf_link = generatePDF($pdf);
-    $mailsent = sendPDFViaMail($pdf_link, $pdf, true, true);
+    $mailsent = sendPDFViaMail($pdf_link, $pdf, false, true);
 
     $data->mail_sent_ok = $mailsent;
     $data->pdf_data = $pdf;
@@ -81,6 +81,8 @@ function generatePDF( $data )
         $footer = str_replace('{{' . $key . '}}', $value, $footer);
     }
 
+    $uploaddir = wp_upload_dir();
+
     $mpdf = new \Mpdf\Mpdf(['tempDir' => get_template_directory() . '/inc/mpdf/tmp', 'margin_top' => 40]);
     $mpdf->SetDisplayMode('fullpage');
     $mpdf->SetTitle( $data['title'] );
@@ -88,12 +90,36 @@ function generatePDF( $data )
     $mpdf->SetHTMLFooter($footer);
     $mpdf->WriteHTML($stylesheet, 1);
     $mpdf->WriteHTML($output, 2);
-    $mpdf->Output(get_template_directory() . '/inc/mpdf/pdfs/' . $data['title'] . '.pdf', \Mpdf\Output\Destination::FILE);
 
-    $outputLink = wp_upload_dir() . '/Soup_seller_cards/' . $data['title'] . '.pdf';
+    $outputLink = $uploaddir['basedir'] . '/Soup_Seller_Cards/' . str_replace(' ', '_', ($data['title'])) . '.pdf';
+    $test = __DIR__ . '/pdfs/test.pdf';
+
+    $mpdf->Output($outputLink, \Mpdf\Output\Destination::FILE);
+    // $mpdf->Output($test, \Mpdf\Output\Destination::FILE);
+
 
     return $outputLink;
 }
+
+/**
+ * Send Email to Admin
+ */
+function sendPDFViaMail($attachment, $data = '', $admin = true, $dev = false)
+{
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    if ($dev) $headers[] = 'Bcc:paul.test@intimation.uk';
+    $to = ($admin) ? get_option('admin_email') : 'paul.spence@intimation.uk';
+
+    $subject = 'Soup Seller PDF - ' . $data['title'];
+    $message = "You have generated a Soup Seller PDF";
+
+    //$attachments = '/var/www/vhosts/suretrainingscotland.co.uk/httpdocs/wp-content/uploads/2018/08/CPC-Joining-Instructions-example-for-web.pdf';
+
+
+    $sendEmail = wp_mail($to, $subject, $message, $headers, $attachment);
+}
+
+
 
 /**
  * Soup Seller Scripts
@@ -119,20 +145,3 @@ function ip_admin_soup_seller_scripts()
 }
 add_action('admin_enqueue_scripts', 'ip_admin_soup_seller_scripts');
 
-/**
- * Send Email to Admin
- */
-function sendPDFViaMail($attachment, $data = '', $admin = true, $dev = false)
-{
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-    if ($dev) $headers[] = 'Bcc:paul.test@intimation.uk';
-    $to = ($admin) ? get_option('admin_email') : 'paul.spence@intimation.uk';
-
-    $subject = 'Soup Seller PDF - ' . $data['title'];
-    $message = "You have generated a Soup Seller PDF";
-
-    //$attachments = '/var/www/vhosts/suretrainingscotland.co.uk/httpdocs/wp-content/uploads/2018/08/CPC-Joining-Instructions-example-for-web.pdf';
-
-
-    $sendEmail = wp_mail($to, $subject, $message, $headers, $attachment);
-}
