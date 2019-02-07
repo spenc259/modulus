@@ -36,7 +36,7 @@ function get_soups()
     $pdf['nutrients'] = $nutrients;
 
     $pdf_link = generatePDF($pdf);
-    $mailsent = sendPDFViaMail($pdf_link, $pdf, false, true);
+    $mailsent = sendPDFViaMail($pdf_link, $pdf, true, false);
 
     $data->mail_sent_ok = $mailsent;
     $data->pdf_data = $pdf;
