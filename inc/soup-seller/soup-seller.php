@@ -95,8 +95,6 @@ function generatePDF( $data )
     $test = __DIR__ . '/pdfs/test.pdf';
 
     $mpdf->Output($outputLink, \Mpdf\Output\Destination::FILE);
-    // $mpdf->Output($test, \Mpdf\Output\Destination::FILE);
-
 
     return $outputLink;
 }
