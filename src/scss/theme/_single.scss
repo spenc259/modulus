@@ -1,0 +1,11 @@
+.single {
+    background: $bg;
+
+    article {
+        min-height: 300px;
+
+        main {
+            color: $secondary;
+        }
+    }
+}
