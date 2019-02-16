@@ -9,9 +9,36 @@ section.slider {
     padding: 0;
 }
 
+.slide-wrap {
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    position: relative;
+
+    i {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        font-size: 3rem;
+        cursor: pointer;
+
+        &:nth-of-type(n+1) {
+            left: 1%;
+        }
+
+        &:nth-of-type(n+2) {
+            right: 1%;
+            left: inherit;
+        }
+    }
+}
+
 .slider-inner {
     flex: 1;
     white-space: nowrap;
+    position: relative;
+
+    
 }
 
 article.slide-item {

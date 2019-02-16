@@ -7063,9 +7063,27 @@ section.slider {
   width: 100%;
   padding: 0; }
 
+.slide-wrap {
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  position: relative; }
+  .slide-wrap i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    font-size: 3rem;
+    cursor: pointer; }
+    .slide-wrap i:nth-of-type(n+1) {
+      left: 1%; }
+    .slide-wrap i:nth-of-type(n+2) {
+      right: 1%;
+      left: inherit; }
+
 .slider-inner {
   flex: 1;
-  white-space: nowrap; }
+  white-space: nowrap;
+  position: relative; }
 
 article.slide-item {
   display: inline-block;
