@@ -1,5 +1,46 @@
 header {
 	background: $bg;
 	color: white;
-	padding: $padding;
+	padding: 0;
+
+	.top-bar {
+		background: $secondary;
+		color: $bg;
+		margin-bottom: 2rem;
+		font-size: 0.8rem;
+		
+		.contact-info {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+			padding: 0.5rem 0;
+
+			p, a {
+				margin: 0 0 1rem;
+			}
+
+			i {
+				font-size: 12px;
+				margin: 0 0.2rem 0 1rem;
+			}
+
+			@include media-breakpoint-up(md) {
+				justify-content: flex-end;
+				
+				flex-flow: row;
+
+				p, a {
+					margin: 0 0 0 0.5rem;
+				}
+			}
+		}
+
+		a {
+			color: $bg;
+		}
+	}
+
+	#logo {
+		margin-bottom: 2rem;
+	}
 }

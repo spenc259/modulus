@@ -1,3 +1,4 @@
+<section class="<?php echo $row['row_class']; ?>">
 <div class="container">
     <div class="row">
         <?php foreach ( $row['pick_a_module'] as $module ) : ?>
@@ -7,3 +8,4 @@
         <?php endforeach; ?>
     </div>
 </div>
+</section>

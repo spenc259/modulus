@@ -2,14 +2,11 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 content-area" id="main-column">	
+		<div class="col-md-12 content-area" id="main-column">	
 			<?php  while (have_posts())  : ?>
 				<?php
 				the_post();
-				get_template_part('templates/singles/single', get_post_type());
-				if (comments_open() || '0' != get_comments_number()) {
-					comments_template();
-				}
+				get_template_part('templates/content-parts/singles/single', get_post_type());
 				?>
 			<?php endwhile; ?>
 		</div>

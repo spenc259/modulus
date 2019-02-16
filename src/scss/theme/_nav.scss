@@ -1,16 +1,24 @@
-.primary-menu {
+.primary-menu, .footer-menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
+	color: $secondary;
 
 	li {
-		margin: 0 0.5rem;
-		text-transform: uppercase;
+		margin: 0 1rem;
+		flex: 1;
+
+		@include media-breakpoint-up(md) {
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 
 		a {
 			text-decoration: none;
-			color: $primary;
+			color: $secondary;
+			font-weight: bold
 		}
 	}
 }

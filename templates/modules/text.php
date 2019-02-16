@@ -1,1 +1,1 @@
-<?php echo $module[$module['acf_fc_layout']];
+<?php echo '<p class="' .$module['class'] . '">' . $module[$module['acf_fc_layout']] . '</p>';

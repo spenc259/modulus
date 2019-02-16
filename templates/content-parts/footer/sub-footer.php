@@ -1,10 +1,17 @@
 <div class="sub_footer container-fluid">
 	<div class="container">
-		<div class="row">
-			<div class="col p-0 mr-auto">
-				<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/gmvaleting-logo.png'; ?>" alt="GM Valeting Logo" />
-			</div>
-			<div class="col"></div>
-		</div>
+		<div class="row align-items-center justify-content-center">
+            <div class="col-auto mr-md-auto " id="logo">
+                <?php
+                do_action('header_left');
+                ?>
+            </div>
+
+            <div class="col-auto">
+                <?php 
+                do_action('footer-menu'); 
+                ?>
+            </div>
+        </div>
 	</div>
 </div>

@@ -34,3 +34,23 @@
 .uppercase {
 	text-transform: uppercase;
 }
+
+
+.white-bg {
+	background: $bg;
+	color: $color;
+}
+
+.white {
+	color: $bg;
+}
+
+.blue-bg {
+	background: $primary;
+	color: $bg;
+}
+
+.dark-bg {
+	background: $secondary;
+	color: $bg;
+}

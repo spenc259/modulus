@@ -31,7 +31,7 @@ function SoMeIcons()
 {
 	get_template_part( 'templates/content-parts/home/content', 'social' );
 }
-add_action('header_right', 'SoMeIcons');
+// add_action('header_right', 'SoMeIcons');
 
 
 function hero()

@@ -148,3 +148,9 @@ require get_template_directory() . '/inc/modal/modal.php';
  * @since 0.4.0
  */
 require get_template_directory() . '/inc/scss/watcher.php';
+
+/**
+ * Pricing
+ * @since 0.4.0
+ */
+require get_template_directory() . '/inc/pricing.php';

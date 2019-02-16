@@ -1,8 +1,10 @@
 /* Framework */
 @import "bootstrap/bootstrap";
 
-// @import "font-awesome/fontawesome";
-// @import "font-awesome/fa-solid";
+@import "font-awesome/fontawesome";
+@import "font-awesome/fa-solid";
+@import "font-awesome/fa-regular";
+@import "font-awesome/fa-brands";
 
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
@@ -19,14 +21,11 @@
 @import "theme/hero";
 @import "theme/footer";
 
-@import "theme/space";
+@import "theme/slider";
+@import "theme/pricing";
+@import "theme/social";
 
-/* Modules */
-@import "theme/modules/cpt";
-@import "theme/modules/carousel";
-@import "theme/modules/news";
-@import "theme/modules/twitter_feed";
+@import "theme/archive";
+@import "theme/single";
 
-/* blocks */
-@import "theme/modules/blocks/events_slider";
-@import "theme/modules/blocks/maxim_discount";
+/* */

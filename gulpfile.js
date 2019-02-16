@@ -24,11 +24,17 @@ gulp.task('sass', function() {
 gulp.task('browserSync', function() {
 	browserSync.init({
 		files: '**/*',
-		proxy: 'localhost/gmvaleting/'
+		proxy: 'localhost/gmvaleting/*'
 	});
 });
 
-gulp.task('watch', [ 'browserSync', 'sass' ], function() {
+// gulp.task('watch', [ 'browserSync', 'sass' ], function() {
+// 	gulp.watch('src/scss/**/*.scss', [ 'sass' ]);
+// 	gulp.watch('src/js/**/*.js', [ 'js-watch' ]);
+// 	gulp.watch('**/**/*.php', browserSync.reload);
+// });
+
+gulp.task('watch', [ 'sass' ], function() {
 	gulp.watch('src/scss/**/*.scss', [ 'sass' ]);
 	gulp.watch('src/js/**/*.js', [ 'js-watch' ]);
 	gulp.watch('**/**/*.php', browserSync.reload);

@@ -1,16 +1,16 @@
 <?php
 
 $cpts = array(
-	'slides' => array(
-		'singular' => 'slide',
-		'display' => 'Slide',
-		'icon'		=> 'dashicons-format-gallery',
-		'description' => 'slides'
+	'services' => array(
+		'singular' => 'service',
+		'display' => 'service',
+		'icon'		=> 'dashicons-admin-tools',
+		'description' => 'services'
 	),
 	'prices' => array(
 		'singular' => 'price',
 		'display' => 'price',
-		'icon'		=> 'dashicons-format-gallery',
+		'icon'		=> 'dashicons-clipboard',
 		'description' => 'prices'
 	),
 	

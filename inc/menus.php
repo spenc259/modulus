@@ -18,7 +18,7 @@ function primary_nav()
 				'theme_location' => 'primary', 
 				'container' => false, 
 				'menu_class' => 'primary-menu',
-				'items_wrap'     => '<ul class="%2$s">%3$s<li class="search-menu-item"><i class="fa fa-search"></i></li></ul>'
+				'items_wrap'     => '<ul class="%2$s">%3$s</ul>'
 			)
 		);
 	echo "</nav>";
@@ -42,7 +42,7 @@ function footer_nav()
 				'theme_location' => 'footer', 
 				'container' => false, 
 				'menu_class' => 'footer-menu',
-				'items_wrap'     => '<ul class="%2$s">%3$s<li class="search-menu-item"><i class="fa fa-search"></i></li></ul>'
+				'items_wrap'     => '<ul class="%2$s">%3$s</ul>'
 			)
 		);
 	echo "</nav>";
