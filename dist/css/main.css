@@ -7131,6 +7131,21 @@ article.slide-item {
   .social {
     padding: 2rem; } }
 
+@media (min-width: 576px) {
+  .grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem; } }
+
+.grid-wrap div {
+  background: #3c3c3c;
+  max-height: 195px;
+  overflow: hidden; }
+
+.grid-wrap img {
+  max-width: 100%;
+  height: auto; }
+
 .archive {
   background: white;
   color: #3a3a3c; }

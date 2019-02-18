@@ -1,0 +1,22 @@
+$bg-light: #3c3c3c;
+
+.grid-wrap {
+
+    @media (min-width: 576px) { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0.5rem;
+    }
+
+    div {
+        background: $bg-light;
+        max-height: 195px;
+        overflow: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}

@@ -1,0 +1,1 @@
+<section id="gallery" class="container mx-auto p-4"></section>

@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import GalleryItem from './galleryItem'
+
 export default class Gallery extends Component {
 
     constructor(props) {
         super(props)
 
-        this.state = {}
+        this.state = {
+            images: []
+        }
+        const appUrl = 'http://localhost/gmvaleting';
+        this.acfendpoint = `${appUrl}/wp-json/acf/v3/options/options`;
     }
 
     componentDidMount() {
-        this.callApi(this.slidesEndpoint).then((response)=>{
+        this.callApi(this.acfendpoint).then((response)=>{
             this.setState(
                 {
-                    slides: response.acf.build_a_row[0].pick_a_module[0].slider
+                    images: response.acf.build_a_row[4].pick_a_module[1].gallery
                 }
             )
         });
@@ -28,5 +34,21 @@ export default class Gallery extends Component {
                 reject(error);
             }); 
         });     
+    }
+
+    render() {
+        console.log(this.state.images)
+        return (
+            <div className="grid-wrap">
+                {
+                    this.state.images.map((image, index) => (
+                        
+                        <div className={"grid-item-" + index} key={index}>
+                            <GalleryItem src={image.sizes.large} alt={image.alt} />
+                        </div>
+                    ))
+                }
+            </div>
+        )
     }
 }
