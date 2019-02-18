@@ -1,1 +1,1 @@
-<section id="gallery" class="container mx-auto p-4"></section>
+<section id="gallery" class="mx-auto p-0"></section>
