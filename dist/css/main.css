@@ -7088,10 +7088,13 @@ section.slider {
 article.slide-item {
   display: inline-block;
   width: 100%;
-  height: 403px;
+  height: 503px;
   background-size: cover;
-  background-position: 0 30%;
+  background-position: 0 50%;
   margin-bottom: -8px; }
+
+.Pricing h3 {
+  margin: 2rem 0; }
 
 .Pricing .price {
   text-align: center;
@@ -7127,9 +7130,26 @@ article.slide-item {
   .Pricing {
     text-align: center; } }
 
+.service:first-of-type {
+  padding-left: 0; }
+
+.service:last-of-type {
+  padding-right: 0; }
+
+.service h4 {
+  color: #3a3a3c;
+  margin: 2rem 0; }
+
+.service ul {
+  list-style: none;
+  padding: 0; }
+
 @media (max-width: 991.98px) {
   .social {
     padding: 2rem; } }
+
+.Gallery .heading {
+  margin: 2rem 0; }
 
 @media (min-width: 576px) {
   .grid-wrap {

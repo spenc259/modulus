@@ -1,4 +1,4 @@
-<section class="<?php echo $row['row_class']; ?>">
+<section class="<?php echo $row['row_class']; ?>" id="<?php echo $row['row_id']; ?>">
     <div class="container-fluid">
         <div class="container">
             <div class="row">

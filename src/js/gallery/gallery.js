@@ -19,7 +19,7 @@ export default class Gallery extends Component {
         this.callApi(this.acfendpoint).then((response)=>{
             this.setState(
                 {
-                    images: response.acf.build_a_row[4].pick_a_module[1].gallery
+                    images: response.acf.build_a_row[5].pick_a_module[1].gallery
                 }
             )
         });
@@ -37,7 +37,7 @@ export default class Gallery extends Component {
     }
 
     render() {
-        console.log(this.state.images)
+        
         return (
             <div className="grid-wrap">
                 {

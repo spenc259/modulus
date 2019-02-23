@@ -1,4 +1,4 @@
-<section class="<?php echo $row['row_class']; ?>">
+<section class="<?php echo $row['row_class']; ?>" id="<?php echo $row['row_id']; ?>">
 <div class="<?php echo ( $row['fluid'] == 1 ) ? 'container-fluid' : 'container'; ?>">
     <div class="row justify-content-center <?php echo $row['class']; ?>">
         <?php foreach ( $row['pick_a_module'] as $module ) : ?>

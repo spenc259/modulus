@@ -1,5 +1,11 @@
 $bg-light: #3c3c3c;
 
+.Gallery {
+    .heading {
+        margin: $heading-margin;
+    }
+}
+
 .grid-wrap {
 
     @media (min-width: 576px) { 
