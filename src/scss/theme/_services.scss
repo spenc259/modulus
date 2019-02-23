@@ -1,0 +1,19 @@
+.service {
+    &:first-of-type {
+        padding-left: 0;
+    }
+
+    &:last-of-type {
+        padding-right: 0;
+    }
+
+    h4 {
+        color: $secondary;
+        margin: $heading-margin;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
